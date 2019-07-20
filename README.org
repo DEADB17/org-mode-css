@@ -1,0 +1,984 @@
+# -*- org-confirm-babel-evaluate: nil; -*-
+#+STARTUP: overview
+#+title: org-mode css
+
+CSS file to make [[https://orgmode.org/][org mode]] documents look better when [[https://orgmode.org/manual/HTML-Export.html#HTML-Export][exported as html]].
+
+- Light-weight single CSS file. No JavaScript, no images, no custom fonts
+- Responsive across screens sizes
+- Dark mode for screens, light mode for print
+- Normalized across browsers and operating systems
+- Minimalist design, just enough to enhance readability
+- Simple to change and extend (edit this file and export)
+
+View the [[https://deadb17.github.io/org-mode-css/][sample document]].
+
+Some alternatives:
+- [[https://github.com/fniessen/org-html-themes][fniessen/org-html-themes]]
+- [[https://github.com/gongzhitaao/orgcss][gongzhitaao/orgcss]]
+- [[https://github.com/thomasf/solarized-css][thomasf/solarized-css]]
+- [[https://github.com/caffo/org-minimal-html-theme][caffo/org-minimal-html-theme]]
+
+* Usage
+1. Download [[docs/org.css]].
+2. Reference it in the [[https://orgmode.org/manual/Export-Settings.html#Export-Settings][settings]] section of the file that will be exported.
+   #+begin_src org
+     ,#+HTML_HEAD: <link rel="stylesheet" href="org.css">
+   #+end_src
+   E.g.:
+   #+begin_src org
+     ,#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:nil arch:headline author:t
+     ,#+OPTIONS: broken-links:nil c:nil creator:t d:(not "LOGBOOK") date:t e:t
+     ,#+OPTIONS: email:t f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
+     ,#+OPTIONS: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
+     ,#+OPTIONS: html-style:nil html-scripts:nil
+     ,#+OPTIONS: html5-fancy:t
+     ,#+HTML_CONTAINER: section
+     ,#+HTML_DOCTYPE: html5
+     ,#+HTML_HEAD: <link rel="stylesheet" href="org.css">
+     ,#+LANGUAGE: en
+     ,#+SELECT_TAGS: export
+     ,#+EXCLUDE_TAGS: noexport
+     ,#+CREATOR: Emacs 26.1 (Org mode 9.1.14)
+   #+end_src
+
+* Generate the =org.css= output file
+:PROPERTIES:
+:VISIBILITY: children
+:header-args:sh:  :var sanitize=sanitize
+:header-args:sh+: :var forms=forms
+:header-args:sh+: :var typography=typography
+:header-args:sh+: :var org=org-styles
+:header-args:sh+: :var colors=colors
+:END:
+The output file is generated from this document. To generate it evaluate (
+@@html:<kbd>@@C-c C-c@@html:</kbd>@@ ) this source block.
+
+#+begin_src sh :file docs/org.css
+  cat $sanitize $typography $forms $org $colors
+#+end_src
+
+#+RESULTS:
+[[file:docs/org.css]]
+
+If you have [[https://nodejs.org/][Node.js]] and [[https://www.npmjs.com/][npm]] installed evaluate this source block to [[https://www.npmjs.com/package/uglifycss][minify]] the
+file.
+#+begin_src sh :file docs/org.css
+  npx uglifycss $sanitize $typography $forms $org $colors
+#+end_src
+
+#+RESULTS:
+[[file:docs/org.css]]
+
+* =org.css= contents
+The customized options are in the /Org/ and /Colors/ sections below. The other
+sections are from the [[https://csstools.github.io/sanitize.css/][sanitize.css]] project.
+
+** Org
+:PROPERTIES:
+:VISIBILITY: children
+:END:
+#+name: org-styles
+#+begin_src css :file org-styles.css
+  h2, h3, h4, h5, h6 {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+  }
+
+  h1, h2, h3, h4 {
+    line-height: 1;
+    font-weight: normal;
+  }
+
+  h1 {font-size: 3.052em;}
+
+  h2 {font-size: 2.441em;}
+
+  h3 {font-size: 1.953em;}
+
+  h4 {font-size: 1.563em;}
+
+  h5 {font-size: 1.25em;}
+
+  p {hyphens: auto;}
+
+  small {font-size: 0.8em;}
+
+  body > * {
+    max-width: 60rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  ul,
+  ol {padding-left: 1.5em;}
+
+  thead > tr {border-bottom: 0.0625em solid;}
+  tbody > tr + tr {border-top: 0.0625em solid;}
+
+  th,
+  td {padding: 0.4em 1.2em;}
+  th:first-child,
+  td:first-child {padding-left: 0;}
+  th:last-child,
+  td:last-child {padding-right: 0;}
+
+  blockquote {
+    margin-right: 0;
+    border-right: .125em solid;
+    padding-right: 1em;
+    margin-left: 0;
+    border-left: .125em solid;
+    padding-left: 1em;
+  }
+
+  table,
+  figure {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  figure {
+    text-align: center;
+  }
+
+  img,
+  object {
+    max-width: 100%;
+  }
+
+  .title { text-align: center; }
+
+  .ABSTRACT {
+    border-top: 0.125em solid;
+    border-bottom: 0.125em solid;
+  }
+
+  .underline { text-decoration: underline; }
+
+  pre.src,
+  pre.example { overflow-x: auto; }
+
+  .on > code,
+  .trans > code,
+  .off > code { display: none; }
+  .on::marker,
+  .trans::marker,
+  .off::marker { padding-right: 0.5em; }
+  .on::marker { content: "☑"}
+  .trans::marker,
+  .off::marker { content: "□"}
+
+  h2 .timestamp-wrapper,
+  h3 .timestamp-wrapper,
+  h4 .timestamp-wrapper,
+  h5 .timestamp-wrapper,
+  #table-of-contents .timestamp-wrapper
+  { font-size: 80%; }
+
+  .timestamp-wrapper,
+  .priority,
+  .todo,
+  .done {
+    font-weight: normal;
+  }
+  .todo,
+  .done {
+    border: 0.125em solid;
+    font-size: 60%;
+    padding: .2em;
+  }
+
+  h2 .priority,
+  h2 .todo,
+  h2 .done,
+  h3 .priority,
+  h3 .todo,
+  h3 .done,
+  h4 .priority,
+  h4 .todo,
+  h4 .done,
+  h5 .priority,
+  h5 .todo,
+  h5 .done,
+  h6 .priority,
+  h6 .todo,
+  h6 .done
+  { margin-right: 0.5em; }
+
+  .timestamp-wrapper,
+  .priority,
+  .todo,
+  .done,
+  .tag {opacity: 0.66;}
+
+  .tag {
+    font-weight: normal;
+    margin-left: auto;
+  }
+
+  .footref {
+    padding: 0 0.25em;
+    text-decoration: none;
+  }
+  .footdef { display: flex; }
+  .footdef sup { padding-right: 0.5rem; }
+  .footpara { margin-top: 0; }
+
+  #table-of-contents ul {
+    padding-left: 1em;
+  }
+
+  #postamble {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.8em;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+    border-top: 0.125em solid;
+  }
+  #postamble > * { margin-bottom: 0; }
+  #postamble > .validation { display: none; }
+
+  @media (min-width: 62rem) {
+    body > * {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (min-width: 84rem) {
+    body {
+      max-width: 84rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    body > * {
+      margin-left: 1rem;
+      margin-right: 1rem;
+    }
+
+    #table-of-contents {
+      position: fixed;
+      top: 0;
+      right: 1rem;
+      bottom: 0;
+      width: calc((100% - 44rem) / 2);
+      overflow-y: auto;
+    }
+
+    #table-of-contents > h2 {
+      font-size: 1.563em;
+    }
+  }
+
+#+end_src
+
+#+RESULTS: org-styles
+[[file:org-styles.css]]
+
+** Colors
+:PROPERTIES:
+:VISIBILITY: children
+:END:
+#+name: colors
+#+begin_src css :file colors.css
+  @media screen {
+    body {
+      color: #eeeeec;
+      background-color: #2e3436;
+    }
+
+    a:link {color: #8cc4ff;}
+
+    a:visited {color: #e090d7;}
+
+    .priority {color: #fce94f;}
+    .todo {color: #fcaf3e;}
+    .done { color: #8ae234;}
+  }
+#+end_src
+
+#+RESULTS: colors
+[[file:colors.css]]
+
+** [[https://github.com/csstools/sanitize.css/blob/master/sanitize.css][Sanitize]]
+#+name: sanitize
+#+begin_src css :file sanitize.css
+  /* Document
+   ,* ========================================================================== */
+
+  /**
+   ,* Add border box sizing in all browsers (opinionated).
+   ,*/
+
+  ,*,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+  }
+
+  /**
+   ,* 1. Add text decoration inheritance in all browsers (opinionated).
+   ,* 2. Add vertical alignment inheritance in all browsers (opinionated).
+   ,*/
+
+  ::before,
+  ::after {
+    text-decoration: inherit; /* 1 */
+    vertical-align: inherit; /* 2 */
+  }
+
+  /**
+   ,* 1. Use the default cursor in all browsers (opinionated).
+   ,* 2. Change the line height in all browsers (opinionated).
+   ,* 3. Use a 4-space tab width in all browsers (opinionated).
+   ,* 4. Remove the grey highlight on links in iOS (opinionated).
+   ,* 5. Prevent adjustments of font size after orientation changes in
+   ,*    IE on Windows Phone and in iOS.
+   ,* 6. Breaks words to prevent overflow in all browsers (opinionated).
+   ,*/
+
+  html {
+    cursor: default; /* 1 */
+    line-height: 1.5; /* 2 */
+    -moz-tab-size: 4; /* 3 */
+    tab-size: 4; /* 3 */
+    -webkit-tap-highlight-color: transparent /* 4 */;
+    -ms-text-size-adjust: 100%; /* 5 */
+    -webkit-text-size-adjust: 100%; /* 5 */
+    word-break: break-word; /* 6 */
+  }
+
+  /* Sections
+   ,* ========================================================================== */
+
+  /**
+   ,* Remove the margin in all browsers (opinionated).
+   ,*/
+
+  body {
+    margin: 0;
+  }
+
+  /**
+   ,* Correct the font size and margin on `h1` elements within `section` and
+   ,* `article` contexts in Chrome, Edge, Firefox, and Safari.
+   ,*/
+
+  h1 {
+    font-size: 2em;
+    margin: 0.67em 0;
+  }
+
+  /* Grouping content
+   ,* ========================================================================== */
+
+  /**
+   ,* Remove the margin on nested lists in Chrome, Edge, IE, and Safari.
+   ,*/
+
+  dl dl,
+  dl ol,
+  dl ul,
+  ol dl,
+  ul dl {
+    margin: 0;
+  }
+
+  /**
+   ,* Remove the margin on nested lists in Edge 18- and IE.
+   ,*/
+
+  ol ol,
+  ol ul,
+  ul ol,
+  ul ul {
+    margin: 0;
+  }
+
+  /**
+   ,* 1. Add the correct sizing in Firefox.
+   ,* 2. Show the overflow in Edge 18- and IE.
+   ,*/
+
+  hr {
+    height: 0; /* 1 */
+    overflow: visible; /* 2 */
+  }
+
+  /**
+   ,* Add the correct display in IE.
+   ,*/
+
+  main {
+    display: block;
+  }
+
+  /**
+   ,* Remove the list style on navigation lists in all browsers (opinionated).
+   ,*/
+
+  /*
+  nav ol,
+  nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  ,*/
+
+  /**
+   ,* 1. Correct the inheritance and scaling of font size in all browsers.
+   ,* 2. Correct the odd `em` font sizing in all browsers.
+   ,*/
+
+  pre {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  /* Text-level semantics
+   ,* ========================================================================== */
+
+  /**
+   ,* Remove the gray background on active links in IE 10.
+   ,*/
+
+  a {
+    background-color: transparent;
+  }
+
+  /**
+   ,* Add the correct text decoration in Edge 18-, IE, and Safari.
+   ,*/
+
+  abbr[title] {
+    text-decoration: underline;
+    text-decoration: underline dotted;
+  }
+
+  /**
+   ,* Add the correct font weight in Chrome, Edge, and Safari.
+   ,*/
+
+  b,
+  strong {
+    font-weight: bolder;
+  }
+
+  /**
+   ,* 1. Correct the inheritance and scaling of font size in all browsers.
+   ,* 2. Correct the odd `em` font sizing in all browsers.
+   ,*/
+
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace; /* 1 */
+    font-size: 1em; /* 2 */
+  }
+
+  /**
+   ,* Add the correct font size in all browsers.
+   ,*/
+
+  small {
+    font-size: 80%;
+  }
+
+  /* Embedded content
+   ,* ========================================================================== */
+
+  /*
+   ,* Change the alignment on media elements in all browsers (opinionated).
+   ,*/
+
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    vertical-align: middle;
+  }
+
+  /**
+   ,* Add the correct display in IE 9-.
+   ,*/
+
+  audio,
+  video {
+    display: inline-block;
+  }
+
+  /**
+   ,* Add the correct display in iOS 4-7.
+   ,*/
+
+  audio:not([controls]) {
+    display: none;
+    height: 0;
+  }
+
+  /**
+   ,* Remove the border on iframes in all browsers (opinionated).
+   ,*/
+
+  iframe {
+    border-style: none;
+  }
+
+  /**
+   ,* Remove the border on images within links in IE 10-.
+   ,*/
+
+  img {
+    border-style: none;
+  }
+
+  /**
+   ,* Change the fill color to match the text color in all browsers (opinionated).
+   ,*/
+
+  svg:not([fill]) {
+    fill: currentColor;
+  }
+
+  /**
+   ,* Hide the overflow in IE.
+   ,*/
+
+  svg:not(:root) {
+    overflow: hidden;
+  }
+
+  /* Tabular data
+   ,* ========================================================================== */
+
+  /**
+   ,* Collapse border spacing in all browsers (opinionated).
+   ,*/
+
+  table {
+    border-collapse: collapse;
+  }
+
+  /* Forms
+   ,* ========================================================================== */
+
+  /**
+   ,* Remove the margin on controls in Safari.
+   ,*/
+
+  button,
+  input,
+  select {
+    margin: 0;
+  }
+
+  /**
+   ,* 1. Show the overflow in IE.
+   ,* 2. Remove the inheritance of text transform in Edge 18-, Firefox, and IE.
+   ,*/
+
+  button {
+    overflow: visible; /* 1 */
+    text-transform: none; /* 2 */
+  }
+
+  /**
+   ,* Correct the inability to style buttons in iOS and Safari.
+   ,*/
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    -webkit-appearance: button;
+  }
+
+  /**
+   ,* 1. Change the inconsistent appearance in all browsers (opinionated).
+   ,* 2. Correct the padding in Firefox.
+   ,*/
+
+  fieldset {
+    border: 1px solid #a0a0a0; /* 1 */
+    padding: 0.35em 0.75em 0.625em; /* 2 */
+  }
+
+  /**
+   ,* Show the overflow in Edge 18- and IE.
+   ,*/
+
+  input {
+    overflow: visible;
+  }
+
+  /**
+   ,* 1. Correct the text wrapping in Edge 18- and IE.
+   ,* 2. Correct the color inheritance from `fieldset` elements in IE.
+   ,*/
+
+  legend {
+    color: inherit; /* 2 */
+    display: table; /* 1 */
+    max-width: 100%; /* 1 */
+    white-space: normal; /* 1 */
+  }
+
+  /**
+   ,* 1. Add the correct display in Edge 18- and IE.
+   ,* 2. Add the correct vertical alignment in Chrome, Edge, and Firefox.
+   ,*/
+
+  progress {
+    display: inline-block; /* 1 */
+    vertical-align: baseline; /* 2 */
+  }
+
+  /**
+   ,* Remove the inheritance of text transform in Firefox.
+   ,*/
+
+  select {
+    text-transform: none;
+  }
+
+  /**
+   ,* 1. Remove the margin in Firefox and Safari.
+   ,* 2. Remove the default vertical scrollbar in IE.
+   ,* 3. Change the resize direction in all browsers (opinionated).
+   ,*/
+
+  textarea {
+    margin: 0; /* 1 */
+    overflow: auto; /* 2 */
+    resize: vertical; /* 3 */
+  }
+
+  /**
+   ,* Remove the padding in IE 10-.
+   ,*/
+
+  [type="checkbox"],
+  [type="radio"] {
+    padding: 0;
+  }
+
+  /**
+   ,* 1. Correct the odd appearance in Chrome, Edge, and Safari.
+   ,* 2. Correct the outline style in Safari.
+   ,*/
+
+  [type="search"] {
+    -webkit-appearance: textfield; /* 1 */
+    outline-offset: -2px; /* 2 */
+  }
+
+  /**
+   ,* Correct the cursor style of increment and decrement buttons in Safari.
+   ,*/
+
+  ::-webkit-inner-spin-button,
+  ::-webkit-outer-spin-button {
+    height: auto;
+  }
+
+  /**
+   ,* Correct the text style of placeholders in Chrome, Edge, and Safari.
+   ,*/
+
+  ::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+  }
+
+  /**
+   ,* Remove the inner padding in Chrome, Edge, and Safari on macOS.
+   ,*/
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none;
+  }
+
+  /**
+   ,* 1. Correct the inability to style upload buttons in iOS and Safari.
+   ,* 2. Change font properties to `inherit` in Safari.
+   ,*/
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; /* 1 */
+    font: inherit; /* 2 */
+  }
+
+  /**
+   ,* Remove the inner border and padding of focus outlines in Firefox.
+   ,*/
+
+  ::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+  }
+
+  /**
+   ,* Restore the focus outline styles unset by the previous rule in Firefox.
+   ,*/
+
+  :-moz-focusring {
+    outline: 1px dotted ButtonText;
+  }
+
+  /**
+   ,* Remove the additional :invalid styles in Firefox.
+   ,*/
+
+  :-moz-ui-invalid {
+    box-shadow: none;
+  }
+
+  /* Interactive
+   ,* ========================================================================== */
+
+  /*
+   ,* Add the correct display in Edge 18- and IE.
+   ,*/
+
+  details {
+    display: block;
+  }
+
+  /*
+   ,* Add the correct styles in Edge 18-, IE, and Safari.
+   ,*/
+
+  dialog {
+    background-color: white;
+    border: solid;
+    color: black;
+    display: block;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    left: 0;
+    margin: auto;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+  }
+
+  dialog:not([open]) {
+    display: none;
+  }
+
+  /*
+   ,* Add the correct display in all browsers.
+   ,*/
+
+  summary {
+    display: list-item;
+  }
+
+  /* Scripting
+   ,* ========================================================================== */
+
+  /**
+   ,* Add the correct display in IE 9-.
+   ,*/
+
+  canvas {
+    display: inline-block;
+  }
+
+  /**
+   ,* Add the correct display in IE.
+   ,*/
+
+  template {
+    display: none;
+  }
+
+  /* User interaction
+   ,* ========================================================================== */
+
+  /*
+   ,* 1. Remove the tapping delay in IE 10.
+   ,* 2. Remove the tapping delay on clickable elements
+        in all browsers (opinionated).
+  ,*/
+
+  a,
+  area,
+  button,
+  input,
+  label,
+  select,
+  summary,
+  textarea,
+  [tabindex] {
+    -ms-touch-action: manipulation; /* 1 */
+    touch-action: manipulation; /* 2 */
+  }
+
+  /**
+   ,* Add the correct display in IE 10-.
+   ,*/
+
+  [hidden] {
+    display: none;
+  }
+
+  /* Accessibility
+   ,* ========================================================================== */
+
+  /**
+   ,* Change the cursor on busy elements in all browsers (opinionated).
+   ,*/
+
+  [aria-busy="true"] {
+    cursor: progress;
+  }
+
+  /*
+   ,* Change the cursor on control elements in all browsers (opinionated).
+   ,*/
+
+  [aria-controls] {
+    cursor: pointer;
+  }
+
+  /*
+   ,* Change the cursor on disabled, not-editable, or otherwise
+   ,* inoperable elements in all browsers (opinionated).
+   ,*/
+
+  [aria-disabled="true"],
+  [disabled] {
+    cursor: not-allowed;
+  }
+
+  /*
+   ,* Change the display on visually hidden accessible elements
+   ,* in all browsers (opinionated).
+   ,*/
+
+  [aria-hidden="false"][hidden] {
+    display: initial;
+  }
+
+  [aria-hidden="false"][hidden]:not(:focus) {
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+  }
+#+end_src
+
+#+RESULTS: sanitize
+[[file:sanitize.css]]
+
+** [[https://github.com/csstools/sanitize.css/blob/master/typography.css][Typography]]
+#+name: typography
+#+begin_src css :file typography.css
+  /**
+   ,* Use the default user interface font in all browsers (opinionated).
+   ,*/
+
+  html {
+    font-family:
+      system-ui,
+      /* macOS 10.11-10.12 */ -apple-system,
+      /* Windows 6+ */ "Segoe UI",
+      /* Android 4+ */ "Roboto",
+      /* Ubuntu 10.10+ */ "Ubuntu",
+      /* Gnome 3+ */ "Cantarell",
+      /* KDE Plasma 5+ */ "Noto Sans",
+      /* fallback */ sans-serif,
+      /* macOS emoji */ "Apple Color Emoji",
+      /* Windows emoji */ "Segoe UI Emoji",
+      /* Windows emoji */ "Segoe UI Symbol",
+      /* Linux emoji */ "Noto Color Emoji";
+  }
+
+  /**
+   ,* Use the default monospace user interface font in all browsers (opinionated).
+   ,*/
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family:
+      /* macOS 10.10+ */ "Menlo",
+      /* Windows 6+ */ "Consolas",
+      /* Android 4+ */ "Roboto Mono",
+      /* Ubuntu 10.10+ */ "Ubuntu Monospace",
+      /* KDE Plasma 5+ */ "Noto Mono",
+      /* KDE Plasma 4+ */ "Oxygen Mono",
+      /* Linux/OpenOffice fallback */ "Liberation Mono",
+      /* fallback */ monospace,
+      /* macOS emoji */ "Apple Color Emoji",
+      /* Windows emoji */ "Segoe UI Emoji",
+      /* Windows emoji */ "Segoe UI Symbol",
+      /* Linux emoji */ "Noto Color Emoji";
+  }
+#+end_src
+
+#+RESULTS: typography
+[[file:typography.css]]
+
+** [[https://github.com/csstools/sanitize.css/blob/master/forms.css][Forms]]
+#+name: forms
+#+begin_src css :file forms.css
+  /**
+   ,* 1. Change the inconsistent appearance in all browsers (opinionated).
+   ,* 2. Add typography inheritance in all browsers (opinionated).
+   ,*/
+
+  button,
+  input,
+  select,
+  textarea {
+    background-color: transparent; /* 1 */
+    border: 1px solid WindowFrame; /* 1 */
+    color: inherit; /* 1 */
+    font: inherit; /* 2 */
+    letter-spacing: inherit; /* 2 */
+    padding: 0.25em 0.375em; /* 1 */
+  }
+
+  /**
+   ,* Change the inconsistent appearance in all browsers (opinionated).
+   ,*/
+
+  select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='4'%3E%3Cpath d='M4 0h6L7 4'/%3E%3C/svg%3E") no-repeat right center / 1em;
+    border-radius: 0;
+    padding-right: 1em;
+  }
+
+  /**
+   ,* Change the inconsistent appearance in IE (opinionated).
+   ,*/
+
+  ::-ms-expand {
+    display: none;
+  }
+
+  /**
+   ,* Correct the inconsistent appearance in IE (opinionated).
+   ,*/
+
+  :-ms-input-placeholder {
+    color: rgba(0, 0, 0, 0.54);
+  }
+#+end_src
+
+#+RESULTS: forms
+[[file:forms.css]]

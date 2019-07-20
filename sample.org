@@ -1,0 +1,171 @@
+# -*- org-confirm-babel-evaluate: nil; -*-
+#+OPTIONS: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
+#+OPTIONS: broken-links:nil c:nil creator:t d:(not "LOGBOOK") date:t e:t
+#+OPTIONS: email:t f:t inline:t num:nil p:nil pri:t prop:nil stat:t tags:t
+#+OPTIONS: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
+#+OPTIONS: html-style:nil html-scripts:nil
+#+OPTIONS: html5-fancy:t
+#+HTML_CONTAINER: section
+#+HTML_DOCTYPE: html5
+#+HTML_HEAD: <link rel="stylesheet" href="org.css">
+#+EXPORT_FILE_NAME: docs/index
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 26.1 (Org mode 9.1.14)
+#+MACRO: kbd @@html:<kbd>$1</kbd>@@
+#+title: Sample org-mode file
+#+date: <2019-07-01 Mon>
+#+author: DEADB17
+#+email: deadb17@gmail.com
+
+#+BEGIN_ABSTRACT
+Abstract: Sed velit architecto accusamus libero eveniet. Ex velit fuga iste et inventore
+assumenda asperiores ut. Aut delectus occaecati at ad quia quam. Quae et
+laboriosam rerum nihil ab quia libero nostrum.
+#+END_ABSTRACT
+
+#+TOC: headlines 3
+
+* Heading 1
+:LOGBOOK:
+- State "NEXT"       from "MAYBE"      [2019-07-20 Sat 12:35]
+- State "MAYBE"      from "NEXT"       [2019-07-20 Sat 12:35]
+- State "NEXT"       from              [2019-07-01 Mon 18:42]
+:END:
+[2019-07-09 Tue 13:15]
+
+** Heading 2
+*** Heading 3
+**** Heading 4
+***** Heading 5
+****** Heading 6
+
+
+** TODO Title with TODO
+
+** DONE Title with DONE
+
+** [#A] Title with Priority
+
+** Title with Tag                                                 :tag0:tag1:
+
+** Miscellaneous <2019-07-01 Mon>
+- *bold*
+- /italic/ /*italic bold*/
+- _underline_ _/underline italic/_ _/*underline italic bold*/_
+- +strike+ +/strike italic/+ +/*strike italic bold*/+
+- =verbatim=
+- ~code~
+
+#+BEGIN_QUOTE
+Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est
+voluptatem. Quis tempore recusandae reprehenderit distinctio sequi. Deleniti
+earum aut corporis. Ut accusamus omnis et deleniti est cumque aliquid. Quas aut
+est dolorum illum doloribus placeat molestiae[fn:lorem_ipsum] repudiandae.
+#+END_QUOTE
+
+*** Table
+
+#+CAPTION: Table Caption
+| \(N\) | \(N^2\) | \(N^3\) | \(N^4\) | \(\sqrt n\) | \(\sqrt[4]N\) |
+|-------+---------+---------+---------+-----------+-----------------|
+|     1 |       1 |       1 |       1 |         1 |               1 |
+|     2 |       4 |       8 |      16 |    1.4142 |          1.1892 |
+|     3 |       9 |      27 |      81 |    1.7321 |          1.3161 |
+|-------+---------+---------+---------+-----------+-----------------|
+#+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
+
+*** List
+
+**** The ordered list
+
+1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+2. Donec et massa sit amet ligula maximus feugiat.
+3. Morbi consequat orci et tincidunt sagittis.
+
+**** Unordered list
+
+- Aliquam non metus nec elit pellentesque scelerisque.
+- In accumsan nunc ac orci varius hendrerit.
+- Suspendisse non eros eu nisi finibus maximus.
+
+**** Definition list
+
+- Lorem ipsum :: dolor sit amet, consectetur adipiscing elit.  Mauris laoreet
+     sollicitudin venenatis.  Duis sed consequat dolor.
+- Etiam feugiat :: pharetra sapien et semper.  Nunc ornare lacus sit amet massa
+     auctor, vitae aliquam eros interdum.  Mauris arcu ante, imperdiet vel purus
+     ac, bibendum faucibus diam.  Ut blandit nec mi at ultricies.  Donec eget
+     mattis nisl.  In sed nibh felis.  Cras quis convallis orci.
+- Sed aliquam :: odio sed faucibus aliquam, arcu augue elementum justo, ut
+     vulputate ligula sem in augue.  Maecenas ante felis, pellentesque auctor
+     semper non, eleifend quis ante.  Fusce enim orci, suscipit ac dapibus et,
+     fermentum eu tortor.  Duis in facilisis ante, quis faucibus dolor.  Etiam
+     maximus lorem quis accumsan vehicula.
+
+**** Checklist
+- [-] Doing
+  - [ ] Not done
+  - [X] Completed
+- [X] Completed
+
+*** Picture
+
+#+CAPTION: Demo Picture with Caption
+[[https://upload.wikimedia.org/wikipedia/commons/a/a6/Org-mode-unicorn.svg]]
+
+And a really wide picture.
+
+#+CAPTION: A really long picture
+[[https://orgmode.org/worg/images/color-themes/color-theme-wombat.png]]
+
+*** Code
+#+begin_src css
+  h1 {font-size: 3.052em;}
+  h2 {font-size: 2.441em;}
+  h3 {font-size: 1.953em;}
+  h4 {font-size: 1.563em;}
+  h5 {font-size: 1.25em;}
+
+  body > * {
+    max-width: 60rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+#+end_src
+
+#+begin_example
+  <table>
+    <thead>
+      <tr>
+        <th scope="col" class="org-right"></th>
+        <th scope="col" class="org-right"></th>
+        <th scope="col" class="org-right"></th>
+        <th scope="col" class="org-right"></th>
+        <th scope="col" class="org-right"></th>
+        <th scope="col" class="org-right"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="org-right">1</td>
+        <td class="org-right">1</td>
+        <td class="org-right">1</td>
+        <td class="org-right">1</td>
+        <td class="org-right">1</td>
+        <td class="org-right">1</td>
+      </tr>
+    </tbody>
+  </table>
+#+end_example
+
+*** Math
+
+\begin{align}
+\mathcal{F}(a) &= \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z - a}\,dz\\
+\int_D (\nabla\cdot \mathcal{F})\,dV &=\int_{\partial D}\mathcal{F}\cdot n\, dS
+\end{align}
+
+* Footnotes
+[fn:lorem_ipsum] https://en.wikipedia.org/wiki/Lorem_ipsum
