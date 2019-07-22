@@ -158,7 +158,11 @@ sections are from the [[https://csstools.github.io/sanitize.css/][sanitize.css]]
   .underline { text-decoration: underline; }
 
   pre.src,
-  pre.example { overflow-x: auto; }
+  pre.example {
+    overflow-x: auto;
+    padding: 0 1em;
+    background: repeating-linear-gradient(rgba(0,0,0,.0625), rgba(0,0,0,.0625) 1.5em, transparent 1.5em, transparent 3em);
+  }
 
   .on > code,
   .trans > code,
