@@ -114,8 +114,11 @@ sections are from the [[https://csstools.github.io/sanitize.css/][sanitize.css]]
   ul,
   ol {padding-left: 1.5em;}
 
-  thead > tr {border-bottom: 0.0625em solid;}
-  tbody > tr + tr {border-top: 0.0625em solid;}
+  thead > tr,
+  tbody > tr {border-bottom: 0.0625em solid;}
+  tbody {border-bottom: 0.188em solid;}
+  tbody:last-child,
+  tbody > tr:last-child {border-bottom: none;}
 
   th,
   td {padding: 0.4em 1.2em;}
