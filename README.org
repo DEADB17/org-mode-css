@@ -105,6 +105,16 @@ sections are from the [[https://csstools.github.io/sanitize.css/][sanitize.css]]
 
   small {font-size: 0.8em;}
 
+  kbd {
+    display: inline-block;
+    padding: 0.19em 0.31em;
+    font-size: 75%;
+    vertical-align: middle;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 20%;
+  }
+
   body > * {
     max-width: 60rem;
     margin-left: 1rem;
@@ -297,6 +307,12 @@ sections are from the [[https://csstools.github.io/sanitize.css/][sanitize.css]]
     body {
       color: #eeeeec;
       background-color: #2e3436;
+    }
+
+    kbd {
+      color: #eeeeec;
+      background-color: #50595b;
+      border-color: ##848e89;
     }
 
     a:link {color: #8cc4ff;}
