@@ -41,6 +41,7 @@ Some alternatives:
      ,#+SELECT_TAGS: export
      ,#+EXCLUDE_TAGS: noexport
      ,#+CREATOR: Emacs + Org mode
+     ,#+MACRO: kbd @@html:<kbd>$1</kbd>@@
    #+end_src
 
 * Generate the =org.css= output file
@@ -66,7 +67,7 @@ The output file is generated from this document. To generate it evaluate (
 If you have [[https://nodejs.org/][Node.js]] and [[https://www.npmjs.com/][npm]] installed evaluate this source block to [[https://www.npmjs.com/package/uglifycss][minify]] the
 file.
 #+begin_src sh :file docs/org.css
-  npx uglifycss $sanitize $typography $forms $org $colors
+  cat $sanitize $typography $forms $org $colors | npx lightningcss-cli --minify
 #+end_src
 
 #+RESULTS:
