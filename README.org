@@ -50,6 +50,7 @@ Some alternatives:
 :header-args:sh+: :var typography="typography.css"
 :header-args:sh+: :var org="org-styles.css"
 :header-args:sh+: :var colors="colors.css"
+:header-args:sh+: :results file
 :END:
 The output file is generated from this document. To generate it evaluate (
 @@html:<kbd>@@C-c C-c@@html:</kbd>@@ ) this source block.
