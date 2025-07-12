@@ -74,6 +74,9 @@ file.
 [[file:docs/org.css]]
 
 * =org.css= contents
+  :PROPERTIES:
+  :header-args:css: :results file
+  :END:
 The customized options are in the /Org/ and /Colors/ sections below. The other
 sections are from the [[https://csstools.github.io/sanitize.css/][sanitize.css]] project.
 
