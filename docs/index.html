@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2019-07-31 Wed 16:24 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 2025-07-11 Fri 19:27 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sample org-mode file</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="DEADB17">
+<meta name="author" content="DEADB17" />
+<meta name="generator" content="Org Mode" />
 <link rel="stylesheet" href="org.css">
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
+<script>
+  window.MathJax = {
+    tex: {
+      ams: {
+        multlineWidth: '85%'
+      },
+      tags: 'ams',
+      tagSide: 'right',
+      tagIndent: '.8em'
+    },
+    chtml: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    svg: {
+      scale: 1.0,
+      displayAlign: 'center',
+      displayIndent: '0em'
+    },
+    output: {
+      font: 'mathjax-modern',
+      displayOverflow: 'overflow'
+    }
+  };
 </script>
-<script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_HTML"></script>
+
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
 </head>
 <body>
-<div id="content">
+<div id="content" class="content">
 <header>
 <h1 class="title">Sample org-mode file</h1>
-</header><div class="ABSTRACT">
+</header><div class="ABSTRACT" id="orgd1d522e">
 <p>
 Abstract: Sed velit architecto accusamus libero eveniet. Ex velit fuga iste et inventore
 assumenda asperiores ut. Aut delectus occaecati at ad quia quam. Quae et
@@ -44,28 +54,28 @@ laboriosam rerum nihil ab quia libero nostrum.
 
 </div>
 
-<nav id="table-of-contents">
+<nav id="table-of-contents" role="doc-toc">
 <h2>Table of Contents</h2>
-<div id="text-table-of-contents">
+<div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org4b231de">Heading 1</a>
+<li><a href="#org8cb3250">Heading 1</a>
 <ul>
-<li><a href="#org5f5eade">Heading 2</a>
+<li><a href="#org0562422">Heading 2</a>
 <ul>
-<li><a href="#org7c89cac">Heading 3</a></li>
+<li><a href="#org316f76a">Heading 3</a></li>
 </ul>
 </li>
-<li><a href="#org4e46699"><span class="todo TODO">TODO</span> Title with TODO</a></li>
-<li><a href="#org2cab0f5"><span class="done DONE">DONE</span> Title with DONE</a></li>
-<li><a href="#orga99d20b"><span class="priority">[A]</span> Title with Priority</a></li>
-<li><a href="#org5a16747">Title with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></a></li>
-<li><a href="#org656d122">Miscellaneous <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-07-01 Mon&gt;</span></span></a>
+<li><a href="#org929fb67"><span class="todo TODO">TODO</span> Title with TODO</a></li>
+<li><a href="#org3ab21a1"><span class="done DONE">DONE</span> Title with DONE</a></li>
+<li><a href="#org707a8ba"><span class="priority">[A]</span> Title with Priority</a></li>
+<li><a href="#org8416303">Title with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></a></li>
+<li><a href="#org2d872a8">Miscellaneous <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-07-01 Mon&gt;</span></span></a>
 <ul>
-<li><a href="#orgcd9e9af">Table</a></li>
-<li><a href="#org747a451">List</a></li>
-<li><a href="#orgbd4525c">Picture</a></li>
-<li><a href="#org4a2b146">Code</a></li>
-<li><a href="#org9224119">Math</a></li>
+<li><a href="#org9db3e4c">Table</a></li>
+<li><a href="#orgc5c991c">List</a></li>
+<li><a href="#orgdbd18bd">Picture</a></li>
+<li><a href="#org2c830aa">Code</a></li>
+<li><a href="#org5383749">Math</a></li>
 </ul>
 </li>
 </ul>
@@ -73,29 +83,27 @@ laboriosam rerum nihil ab quia libero nostrum.
 </ul>
 </div>
 </nav>
-
-<section id="outline-container-org4b231de" class="outline-2">
-<h2 id="org4b231de">Heading 1</h2>
-<div class="outline-text-2" id="text-org4b231de">
+<section id="outline-container-org8cb3250" class="outline-2">
+<h2 id="org8cb3250">Heading 1</h2>
+<div class="outline-text-2" id="text-org8cb3250">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2019-07-09 Tue 13:15]</span></span>
 </p>
 </div>
-
-<div id="outline-container-org5f5eade" class="outline-3">
-<h3 id="org5f5eade">Heading 2</h3>
-<div class="outline-text-3" id="text-org5f5eade">
+<div id="outline-container-org0562422" class="outline-3">
+<h3 id="org0562422">Heading 2</h3>
+<div class="outline-text-3" id="text-org0562422">
 </div>
-<div id="outline-container-org7c89cac" class="outline-4">
-<h4 id="org7c89cac">Heading 3</h4>
-<div class="outline-text-4" id="text-org7c89cac">
+<div id="outline-container-org316f76a" class="outline-4">
+<h4 id="org316f76a">Heading 3</h4>
+<div class="outline-text-4" id="text-org316f76a">
 </div>
 <ul class="org-ul">
-<li><a id="orga129614"></a>Heading 4<br>
+<li><a id="org6dfe633"></a>Heading 4<br>
 <ul class="org-ul">
-<li><a id="orgf2c24ba"></a>Heading 5<br>
+<li><a id="orgd2c84c6"></a>Heading 5<br>
 <ul class="org-ul">
-<li><a id="org5901240"></a>Heading 6<br></li>
+<li><a id="orga786cf0"></a>Heading 6<br></li>
 </ul>
 </li>
 </ul>
@@ -103,27 +111,25 @@ laboriosam rerum nihil ab quia libero nostrum.
 </ul>
 </div>
 </div>
-
-
-<div id="outline-container-org4e46699" class="outline-3">
-<h3 id="org4e46699"><span class="todo TODO">TODO</span> Title with TODO</h3>
+<div id="outline-container-org929fb67" class="outline-3">
+<h3 id="org929fb67"><span class="todo TODO">TODO</span> Title with TODO</h3>
 </div>
 
-<div id="outline-container-org2cab0f5" class="outline-3">
-<h3 id="org2cab0f5"><span class="done DONE">DONE</span> Title with DONE</h3>
+<div id="outline-container-org3ab21a1" class="outline-3">
+<h3 id="org3ab21a1"><span class="done DONE">DONE</span> Title with DONE</h3>
 </div>
 
-<div id="outline-container-orga99d20b" class="outline-3">
-<h3 id="orga99d20b"><span class="priority">[A]</span> Title with Priority</h3>
+<div id="outline-container-org707a8ba" class="outline-3">
+<h3 id="org707a8ba"><span class="priority">[A]</span> Title with Priority</h3>
 </div>
 
-<div id="outline-container-org5a16747" class="outline-3">
-<h3 id="org5a16747">Title with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></h3>
+<div id="outline-container-org8416303" class="outline-3">
+<h3 id="org8416303">Title with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag0">tag0</span>&#xa0;<span class="tag1">tag1</span></span></h3>
 </div>
 
-<div id="outline-container-org656d122" class="outline-3">
-<h3 id="org656d122">Miscellaneous <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-07-01 Mon&gt;</span></span></h3>
-<div class="outline-text-3" id="text-org656d122">
+<div id="outline-container-org2d872a8" class="outline-3">
+<h3 id="org2d872a8">Miscellaneous <span class="timestamp-wrapper"><span class="timestamp">&lt;2019-07-01 Mon&gt;</span></span></h3>
+<div class="outline-text-3" id="text-org2d872a8">
 <ul class="org-ul">
 <li><b>bold</b></li>
 <li><i>italic</i> <i><b>italic bold</b></i></li>
@@ -138,14 +144,13 @@ laboriosam rerum nihil ab quia libero nostrum.
 Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est
 voluptatem. Quis tempore recusandae reprehenderit distinctio sequi. Deleniti
 earum aut corporis. Ut accusamus omnis et deleniti est cumque aliquid. Quas aut
-est dolorum illum doloribus placeat molestiae<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> repudiandae.
+est dolorum illum doloribus placeat molestiae<sup><a id="fnr.lorem_ipsum" class="footref" href="#fn.lorem_ipsum" role="doc-backlink">1</a></sup> repudiandae.
 </p>
 </blockquote>
 </div>
-
-<div id="outline-container-orgcd9e9af" class="outline-4">
-<h4 id="orgcd9e9af">Table</h4>
-<div class="outline-text-4" id="text-orgcd9e9af">
+<div id="outline-container-org9db3e4c" class="outline-4">
+<h4 id="org9db3e4c">Table</h4>
+<div class="outline-text-4" id="text-org9db3e4c">
 <table>
 <caption class="t-above"><span class="table-number">Table 1:</span> Table Caption</caption>
 
@@ -204,14 +209,13 @@ est dolorum illum doloribus placeat molestiae<sup><a id="fnr.1" class="footref" 
 </table>
 </div>
 </div>
-
-<div id="outline-container-org747a451" class="outline-4">
-<h4 id="org747a451">List</h4>
-<div class="outline-text-4" id="text-org747a451">
+<div id="outline-container-orgc5c991c" class="outline-4">
+<h4 id="orgc5c991c">List</h4>
+<div class="outline-text-4" id="text-orgc5c991c">
 </div>
 <ul class="org-ul">
-<li><a id="org84901ce"></a>The ordered list<br>
-<div class="outline-text-5" id="text-org84901ce">
+<li><a id="orga803c70"></a>The ordered list<br>
+<div class="outline-text-5" id="text-orga803c70">
 <ol class="org-ol">
 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
 <li>Donec et massa sit amet ligula maximus feugiat.</li>
@@ -219,9 +223,8 @@ est dolorum illum doloribus placeat molestiae<sup><a id="fnr.1" class="footref" 
 </ol>
 </div>
 </li>
-
-<li><a id="org12cfdd1"></a>Unordered list<br>
-<div class="outline-text-5" id="text-org12cfdd1">
+<li><a id="org7abadd0"></a>Unordered list<br>
+<div class="outline-text-5" id="text-org7abadd0">
 <ul class="org-ul">
 <li>Aliquam non metus nec elit pellentesque scelerisque.</li>
 <li>In accumsan nunc ac orci varius hendrerit.</li>
@@ -229,9 +232,8 @@ est dolorum illum doloribus placeat molestiae<sup><a id="fnr.1" class="footref" 
 </ul>
 </div>
 </li>
-
-<li><a id="org13c7d86"></a>Definition list<br>
-<div class="outline-text-5" id="text-org13c7d86">
+<li><a id="orge82ac85"></a>Definition list<br>
+<div class="outline-text-5" id="text-orge82ac85">
 <dl class="org-dl">
 <dt>Lorem ipsum</dt><dd>dolor sit amet, consectetur adipiscing elit.  Mauris laoreet
 sollicitudin venenatis.  Duis sed consequat dolor.</dd>
@@ -247,9 +249,8 @@ maximus lorem quis accumsan vehicula.</dd>
 </dl>
 </div>
 </li>
-
-<li><a id="org87bbc0a"></a>Checklist<br>
-<div class="outline-text-5" id="text-org87bbc0a">
+<li><a id="org6b6e8a7"></a>Checklist<br>
+<div class="outline-text-5" id="text-org6b6e8a7">
 <ul class="org-ul">
 <li class="trans"><code>[-]</code> Doing
 <ul class="org-ul">
@@ -262,14 +263,12 @@ maximus lorem quis accumsan vehicula.</dd>
 </li>
 </ul>
 </div>
+<div id="outline-container-orgdbd18bd" class="outline-4">
+<h4 id="orgdbd18bd">Picture</h4>
+<div class="outline-text-4" id="text-orgdbd18bd">
 
-<div id="outline-container-orgbd4525c" class="outline-4">
-<h4 id="orgbd4525c">Picture</h4>
-<div class="outline-text-4" id="text-orgbd4525c">
-
-<figure>
-<object type="image/svg+xml" data="https://upload.wikimedia.org/wikipedia/commons/a/a6/Org-mode-unicorn.svg" class="org-svg">
-Sorry, your browser does not support SVG.</object>
+<figure id="org369171e">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Org-mode-unicorn.svg" alt="Org-mode-unicorn.svg" class="org-svg">
 
 <figcaption><span class="figure-number">Figure 1: </span>Demo Picture with Caption</figcaption>
 </figure>
@@ -279,25 +278,24 @@ And a really wide picture.
 </p>
 
 
-<figure>
+<figure id="orgb13439a">
 <img src="https://orgmode.org/worg/images/color-themes/color-theme-wombat.png" alt="color-theme-wombat.png">
 
 <figcaption><span class="figure-number">Figure 2: </span>A really long picture</figcaption>
 </figure>
 </div>
 </div>
-
-<div id="outline-container-org4a2b146" class="outline-4">
-<h4 id="org4a2b146">Code</h4>
-<div class="outline-text-4" id="text-org4a2b146">
+<div id="outline-container-org2c830aa" class="outline-4">
+<h4 id="org2c830aa">Code</h4>
+<div class="outline-text-4" id="text-org2c830aa">
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #fce94f;">h1 </span>{<span style="color: #b4fa70;">font-size</span>: 3.052em;}
-<span style="color: #fce94f;">h2 </span>{<span style="color: #b4fa70;">font-size</span>: 2.441em;}
-<span style="color: #fce94f;">h3 </span>{<span style="color: #b4fa70;">font-size</span>: 1.953em;}
-<span style="color: #fce94f;">h4 </span>{<span style="color: #b4fa70;">font-size</span>: 1.563em;}
-<span style="color: #fce94f;">h5 </span>{<span style="color: #b4fa70;">font-size</span>: 1.25em;}
+<pre class="src src-css"><span style="color: #fce94f;">h1</span> {<span style="color: #b4fa70;">font-size</span>: 3.052em;}
+<span style="color: #fce94f;">h2</span> {<span style="color: #b4fa70;">font-size</span>: 2.441em;}
+<span style="color: #fce94f;">h3</span> {<span style="color: #b4fa70;">font-size</span>: 1.953em;}
+<span style="color: #fce94f;">h4</span> {<span style="color: #b4fa70;">font-size</span>: 1.563em;}
+<span style="color: #fce94f;">h5</span> {<span style="color: #b4fa70;">font-size</span>: 1.25em;}
 
-<span style="color: #fce94f;">body &gt; * </span>{
+<span style="color: #fce94f;">body &gt; *</span> {
   <span style="color: #b4fa70;">max-width</span>: 60rem;
   <span style="color: #b4fa70;">margin-left</span>: 1rem;
   <span style="color: #b4fa70;">margin-right</span>: 1rem;
@@ -305,7 +303,7 @@ And a really wide picture.
 </pre>
 </div>
 
-<pre class="example">
+<pre class="example" id="orgc3b8a07">
 &lt;table&gt;
   &lt;thead&gt;
     &lt;tr&gt;
@@ -331,10 +329,9 @@ And a really wide picture.
 </pre>
 </div>
 </div>
-
-<div id="outline-container-org9224119" class="outline-4">
-<h4 id="org9224119">Math</h4>
-<div class="outline-text-4" id="text-org9224119">
+<div id="outline-container-org5383749" class="outline-4">
+<h4 id="org5383749">Math</h4>
+<div class="outline-text-4" id="text-org5383749">
 \begin{align}
 \mathcal{F}(a) &= \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z - a}\,dz\\
 \int_D (\nabla\cdot \mathcal{F})\,dV &=\int_{\partial D}\mathcal{F}\cdot n\, dS
@@ -347,7 +344,7 @@ And a really wide picture.
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<div class="footdef"><sup><a id="fn.lorem_ipsum" class="footnum" href="#fnr.lorem_ipsum" role="doc-backlink">1</a></sup> <div class="footpara" role="doc-footnote"><p class="footpara">
 <a href="https://en.wikipedia.org/wiki/Lorem_ipsum">https://en.wikipedia.org/wiki/Lorem_ipsum</a>
 </p></div></div>
 
@@ -356,8 +353,8 @@ And a really wide picture.
 </div></div>
 <div id="postamble" class="status">
 <p class="author">Author: DEADB17 (<a href="mailto:deadb17@gmail.com">deadb17@gmail.com</a>)</p>
-<p class="date">Date: 2019-07-01 Mon 00:00</p>
-<p class="creator">Emacs 26.1 (Org mode 9.1.14)</p>
+<p class="date">Date: 2025-07-11 Fri 00:00</p>
+<p class="creator">Emacs + Org mode</p>
 <p class="validation"></p>
 </div>
 </body>

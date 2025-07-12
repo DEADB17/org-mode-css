@@ -20,26 +20,28 @@ Some alternatives:
 - [[https://github.com/caffo/org-minimal-html-theme][caffo/org-minimal-html-theme]]
 
 * Usage
-1. Download [[docs/org.css]].
+1. Download file:docs/org.css.
 2. Reference it in the [[https://orgmode.org/manual/Export-Settings.html#Export-Settings][settings]] section of the file that will be exported.
    #+begin_src org
      ,#+HTML_HEAD: <link rel="stylesheet" href="org.css">
    #+end_src
    E.g.:
    #+begin_src org
-     ,#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:nil arch:headline author:t
+     ,#+OPTIONS: ':t *:t -:t ::t <:t H:3 \n:nil ^:{} arch:headline author:t
      ,#+OPTIONS: broken-links:nil c:nil creator:t d:(not "LOGBOOK") date:t e:t
-     ,#+OPTIONS: email:t f:t inline:t num:nil p:nil pri:nil prop:nil stat:t tags:t
+     ,#+OPTIONS: email:t f:t inline:t num:nil p:nil pri:t prop:nil stat:t tags:t
      ,#+OPTIONS: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
      ,#+OPTIONS: html-style:nil html-scripts:nil
      ,#+OPTIONS: html5-fancy:t
      ,#+HTML_CONTAINER: section
      ,#+HTML_DOCTYPE: html5
      ,#+HTML_HEAD: <link rel="stylesheet" href="org.css">
+     ,#+EXPORT_FILE_NAME: www/index
      ,#+LANGUAGE: en
      ,#+SELECT_TAGS: export
      ,#+EXCLUDE_TAGS: noexport
-     ,#+CREATOR: Emacs 26.1 (Org mode 9.1.14)
+     ,#+CREATOR: Emacs + Org mode
+     ,#+MACRO: kbd @@html:<kbd>$1</kbd>@@
    #+end_src
 
 * Generate the =org.css= output file
@@ -50,6 +52,7 @@ Some alternatives:
 :header-args:sh+: :var typography=typography
 :header-args:sh+: :var org=org-styles
 :header-args:sh+: :var colors=colors
+:header-args:sh+: :results file
 :END:
 The output file is generated from this document. To generate it evaluate (
 @@html:<kbd>@@C-c C-c@@html:</kbd>@@ ) this source block.
@@ -64,13 +67,16 @@ The output file is generated from this document. To generate it evaluate (
 If you have [[https://nodejs.org/][Node.js]] and [[https://www.npmjs.com/][npm]] installed evaluate this source block to [[https://www.npmjs.com/package/uglifycss][minify]] the
 file.
 #+begin_src sh :file docs/org.css
-  npx uglifycss $sanitize $typography $forms $org $colors
+  cat $sanitize $typography $forms $org $colors | npx lightningcss-cli --minify
 #+end_src
 
 #+RESULTS:
 [[file:docs/org.css]]
 
 * =org.css= contents
+  :PROPERTIES:
+  :header-args:css: :results file
+  :END:
 The customized options are in the /Org/ and /Colors/ sections below. The other
 sections are from the [[https://csstools.github.io/sanitize.css/][sanitize.css]] project.
 
