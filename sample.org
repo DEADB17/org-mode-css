@@ -12,10 +12,10 @@
 #+LANGUAGE: en
 #+SELECT_TAGS: export
 #+EXCLUDE_TAGS: noexport
-#+CREATOR: Emacs 26.1 (Org mode 9.1.14)
+#+CREATOR: Emacs + Org mode
 #+MACRO: kbd @@html:<kbd>$1</kbd>@@
 #+title: Sample org-mode file
-#+date: <2019-07-01 Mon>
+#+date: <2025-07-11 Fri>
 #+author: DEADB17
 #+email: deadb17@gmail.com
 
