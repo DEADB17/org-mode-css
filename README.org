@@ -36,6 +36,7 @@ Some alternatives:
      ,#+HTML_CONTAINER: section
      ,#+HTML_DOCTYPE: html5
      ,#+HTML_HEAD: <link rel="stylesheet" href="org.css">
+     ,#+EXPORT_FILE_NAME: www/index
      ,#+LANGUAGE: en
      ,#+SELECT_TAGS: export
      ,#+EXCLUDE_TAGS: noexport
