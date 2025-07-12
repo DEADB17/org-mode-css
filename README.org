@@ -20,7 +20,7 @@ Some alternatives:
 - [[https://github.com/caffo/org-minimal-html-theme][caffo/org-minimal-html-theme]]
 
 * Usage
-1. Download [[docs/org.css]].
+1. Download file:docs/org.css.
 2. Reference it in the [[https://orgmode.org/manual/Export-Settings.html#Export-Settings][settings]] section of the file that will be exported.
    #+begin_src org
      ,#+HTML_HEAD: <link rel="stylesheet" href="org.css">
