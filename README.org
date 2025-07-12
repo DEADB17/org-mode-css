@@ -47,11 +47,11 @@ Some alternatives:
 * Generate the =org.css= output file
 :PROPERTIES:
 :VISIBILITY: children
-:header-args:sh:  :var sanitize="sanitize.css"
-:header-args:sh+: :var forms="forms.css"
-:header-args:sh+: :var typography="typography.css"
-:header-args:sh+: :var org="org-styles.css"
-:header-args:sh+: :var colors="colors.css"
+:header-args:sh:  :var sanitize=sanitize
+:header-args:sh+: :var forms=forms
+:header-args:sh+: :var typography=typography
+:header-args:sh+: :var org=org-styles
+:header-args:sh+: :var colors=colors
 :header-args:sh+: :results file
 :END:
 The output file is generated from this document. To generate it evaluate (
