@@ -39,7 +39,7 @@ Some alternatives:
      ,#+LANGUAGE: en
      ,#+SELECT_TAGS: export
      ,#+EXCLUDE_TAGS: noexport
-     ,#+CREATOR: Emacs 26.1 (Org mode 9.1.14)
+     ,#+CREATOR: Emacs + Org mode
    #+end_src
 
 * Generate the =org.css= output file
