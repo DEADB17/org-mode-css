@@ -3,8 +3,7 @@
 #+OPTIONS: num:3 d:t p:t prop:t
 #+EXPORT_FILE_NAME: docs/index
 #+HTML_HEAD: <link rel="stylesheet" href="simple.css">
-#+HTML_HEAD: <link rel="stylesheet" href="simple-test.css">
-# HTML_HEAD: <link rel="stylesheet" href="org.css">
+#+HTML_HEAD: <link rel="stylesheet" href="org.css">
 #+HTML_HEAD: <script src="org.js"></script>
 #+author: DEADB17
 #+email: deadb17@gmail.com
