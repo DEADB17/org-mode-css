@@ -1,40 +1,96 @@
-# -*- org-confirm-babel-evaluate: nil; -*-
-#+OPTIONS: ':t *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t
-#+OPTIONS: broken-links:nil c:nil creator:t d:(not "LOGBOOK") date:t e:t
-#+OPTIONS: email:t f:t inline:t num:nil p:nil pri:t prop:nil stat:t tags:t
-#+OPTIONS: tasks:t tex:t timestamp:t title:t toc:nil todo:t |:t
-#+OPTIONS: html-style:nil html-scripts:nil
-#+OPTIONS: html5-fancy:t
-#+HTML_CONTAINER: section
-#+HTML_DOCTYPE: html5
-#+HTML_HEAD: <link rel="stylesheet" href="org.css">
+# -*- org-adapt-indentation: nil; org-confirm-babel-evaluate: nil; org-html-mathjax-template: ""; -*-
+#+SETUPFILE: setup.org
+#+OPTIONS: num:3 d:t p:t prop:t
 #+EXPORT_FILE_NAME: docs/index
-#+LANGUAGE: en
-#+SELECT_TAGS: export
-#+EXCLUDE_TAGS: noexport
-#+CREATOR: Emacs + Org mode
-#+MACRO: kbd @@html:<kbd>$1</kbd>@@
-#+title: Sample org-mode file
-#+date: <2025-07-11 Fri>
+#+HTML_HEAD: <link rel="stylesheet" href="simple.css">
+#+HTML_HEAD: <link rel="stylesheet" href="simple-test.css">
+# HTML_HEAD: <link rel="stylesheet" href="org.css">
+#+HTML_HEAD: <script src="org.js"></script>
 #+author: DEADB17
 #+email: deadb17@gmail.com
+#+date: <2025-07-11 Fri>
+#+title: Sample org-mode file
+#+subtitle: With a /subtitle/
 
-#+BEGIN_ABSTRACT
-Abstract: Sed velit architecto accusamus libero eveniet. Ex velit fuga iste et inventore
-assumenda asperiores ut. Aut delectus occaecati at ad quia quam. Quae et
-laboriosam rerum nihil ab quia libero nostrum.
-#+END_ABSTRACT
+
+Preface or abstract: Sed aliquam odio sed faucibus aliquam, arcu augue elementum
+justo, ut vulputate ligula sem in augue. Maecenas ante felis, pellentesque
+auctor semper non, eleifend quis ante. Fusce enim orci, suscipit ac dapibus et,
+fermentum eu tortor. Duis in facilisis ante, quis faucibus dolor. Etiam maximus
+lorem quis accumsan vehicula.
 
 #+TOC: headlines 3
 
-* Heading 1
+
+* orgmode headings
+
+** TODO Heading with TODO
+
+** DONE Heading with DONE
+
+** [#A] Heading with Priority
+
+** Heading with Tag                                            :tag:short_tag:a_longer_tag:tag:
+
+** Heading with [fn:1]
+
+** Heading with =schedule=
+SCHEDULED: <2025-12-31 Wed>
+
+** Heading with =deadline=
+DEADLINE: <2025-12-31 Wed 23:59>
+
+** Heading with =properties=
+:PROPERTIES:
+:CUSTOM_ID: fragment
+:END:
+
+** Heading with =logbook=
 :LOGBOOK:
 - State "NEXT"       from "MAYBE"      [2019-07-20 Sat 12:35]
 - State "MAYBE"      from "NEXT"       [2019-07-20 Sat 12:35]
-- State "NEXT"       from              [2019-07-01 Mon 18:42]
+- State "NEXT"       from "TODO"       [2019-07-01 Mon 18:42]
 :END:
-[2019-07-09 Tue 13:15]
 
+** DONE [#C] Heading with all                          :short_tag:a_longer_tag:tag:reflect:tag:
+DEADLINE: <2025-07-15 Tue 13:00> SCHEDULED: <2025-07-15 Tue 13:00>
+:PROPERTIES:
+:ORDERED:  t
+:SUMMARY:  Summary
+:END:
+- Note taken on [2025-07-15 Tue 10:05] \\
+  Another note
+:LOGBOOK:
+- Note taken on [2025-07-15 Tue 10:00] \\
+  A note
+- State "NEXT"       from "MAYBE"      [2019-07-20 Sat 12:35]
+- State "MAYBE"      from "NEXT"       [2019-07-20 Sat 12:35]
+- State "NEXT"       from "TODO"       [2019-07-01 Mon 18:42]
+:END:
+
+
+* Inline
+- *bold*
+- /italic/ /*italic bold*/
+- _underline_ _/underline italic/_ _/*underline italic bold*/_
+- +strike+ +/strike italic/+ +/*strike italic bold*/+
+- =verbatim=
+- ~code~
+- sub_{script}
+- super^{script}
+- "dq" 'sq' shy\-hyphen en--dash em---dash elipsis...
+- \dag \ddag \P \S \loz \bull
+- \copy \reg \trade
+- \larr \uarr \harr \darr \rarr
+- \leftarrow \Leftarrow \uparrow \Uparrow \Downarrow \downarrow \Rightarrow \rightarrow
+- \lt \le \ne \approx \cong \ge \gt \infin
+- \in \ni \sub \sup \lor \land \not
+- [fn:1: Inline footnote]
+- [1991-06-06 Thu 13:00-13:13]
+- <2000-01-01 Sat>--<2000-01-01 Sat>
+
+
+* Heading 1
 ** Heading 2
 *** Heading 3
 **** Heading 4
@@ -42,30 +98,48 @@ laboriosam rerum nihil ab quia libero nostrum.
 ****** Heading 6
 
 
-** TODO Title with TODO
+* List
 
-** DONE Title with DONE
+** Ordered list
+1. Lorem ipsum dolor sit amet consectetur adipiscing elit.
+   1. Ex sapien vitae pellentesque sem placerat in id.
+      1. Pretium tellus duis convallis tempus leo eu aenean.
+         1. Urna tempor pulvinar vivamus fringilla lacus nec metus.
+         2. Iaculis massa nisl malesuada lacinia integer nunc posuere.
+      2. Semper vel class aptent taciti sociosqu ad litora.
+   2. Conubia nostra inceptos himenaeos orci varius natoque penatibus.
+2. Dis parturient montes nascetur ridiculus mus donec rhoncus.
 
-** [#A] Title with Priority
+** Unordered list
+- Lorem ipsum dolor sit amet consectetur adipiscing elit.
+  - Ex sapien vitae pellentesque sem placerat in id.
+    - Pretium tellus duis convallis tempus leo eu aenean.
+      - Urna tempor pulvinar vivamus fringilla lacus nec metus.
+      - Iaculis massa nisl malesuada lacinia integer nunc posuere.
+    - Semper vel class aptent taciti sociosqu ad litora.
+  - Conubia nostra inceptos himenaeos orci varius natoque penatibus.
+- Dis parturient montes nascetur ridiculus mus donec rhoncus.
 
-** Title with Tag                                                 :tag0:tag1:
+** Definition list
+- Lorem ipsum :: dolor sit amet consectetur adipiscing elit. Ex sapien vitae
+  pellentesque sem placerat in id. Pretium tellus duis convallis tempus leo eu
+  aenean.
 
-** Miscellaneous <2019-07-01 Mon>
-- *bold*
-- /italic/ /*italic bold*/
-- _underline_ _/underline italic/_ _/*underline italic bold*/_
-- +strike+ +/strike italic/+ +/*strike italic bold*/+
-- =verbatim=
-- ~code~
+  - Urna tempor :: pulvinar vivamus fringilla lacus nec metus. Iaculis massa
+    nisl malesuada lacinia integer nunc posuere.
 
-#+BEGIN_QUOTE
-Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est
-voluptatem. Quis tempore recusandae reprehenderit distinctio sequi. Deleniti
-earum aut corporis. Ut accusamus omnis et deleniti est cumque aliquid. Quas aut
-est dolorum illum doloribus placeat molestiae[fn:lorem_ipsum] repudiandae.
-#+END_QUOTE
+- Semper vel class aptent taciti sociosqu ad litora :: Conubia nostra inceptos
+  himenaeos orci varius natoque penatibus.Dis parturient montes nascetur
+  ridiculus mus donec rhoncus.
 
-*** Table
+** Check list
+- [-] Doing
+  - [ ] Not done
+  - [X] Completed
+- [X] Completed
+
+
+* Table
 
 #+CAPTION: Table Caption
 | \(N\) | \(N^2\) | \(N^3\) | \(N^4\) | \(\sqrt n\) | \(\sqrt[4]N\) |
@@ -76,41 +150,8 @@ est dolorum illum doloribus placeat molestiae[fn:lorem_ipsum] repudiandae.
 |     3 |       9 |      27 |      81 |      1.7321 |        1.3161 |
 #+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
 
-*** List
 
-**** The ordered list
-
-1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-2. Donec et massa sit amet ligula maximus feugiat.
-3. Morbi consequat orci et tincidunt sagittis.
-
-**** Unordered list
-
-- Aliquam non metus nec elit pellentesque scelerisque.
-- In accumsan nunc ac orci varius hendrerit.
-- Suspendisse non eros eu nisi finibus maximus.
-
-**** Definition list
-
-- Lorem ipsum :: dolor sit amet, consectetur adipiscing elit.  Mauris laoreet
-     sollicitudin venenatis.  Duis sed consequat dolor.
-- Etiam feugiat :: pharetra sapien et semper.  Nunc ornare lacus sit amet massa
-     auctor, vitae aliquam eros interdum.  Mauris arcu ante, imperdiet vel purus
-     ac, bibendum faucibus diam.  Ut blandit nec mi at ultricies.  Donec eget
-     mattis nisl.  In sed nibh felis.  Cras quis convallis orci.
-- Sed aliquam :: odio sed faucibus aliquam, arcu augue elementum justo, ut
-     vulputate ligula sem in augue.  Maecenas ante felis, pellentesque auctor
-     semper non, eleifend quis ante.  Fusce enim orci, suscipit ac dapibus et,
-     fermentum eu tortor.  Duis in facilisis ante, quis faucibus dolor.  Etiam
-     maximus lorem quis accumsan vehicula.
-
-**** Checklist
-- [-] Doing
-  - [ ] Not done
-  - [X] Completed
-- [X] Completed
-
-*** Picture
+* Picture
 
 #+CAPTION: Demo Picture with Caption
 [[https://upload.wikimedia.org/wikipedia/commons/a/a6/Org-mode-unicorn.svg]]
@@ -120,7 +161,10 @@ And a really wide picture.
 #+CAPTION: A really long picture
 [[https://orgmode.org/worg/images/color-themes/color-theme-wombat.png]]
 
-*** Code
+
+* Blocks
+
+** Code
 #+begin_src css
   h1 {font-size: 3.052em;}
   h2 {font-size: 2.441em;}
@@ -135,37 +179,69 @@ And a really wide picture.
   }
 #+end_src
 
+** Example
 #+begin_example
-  <table>
-    <thead>
-      <tr>
-        <th scope="col" class="org-right"></th>
-        <th scope="col" class="org-right"></th>
-        <th scope="col" class="org-right"></th>
-        <th scope="col" class="org-right"></th>
-        <th scope="col" class="org-right"></th>
-        <th scope="col" class="org-right"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="org-right">1</td>
-        <td class="org-right">1</td>
-        <td class="org-right">1</td>
-        <td class="org-right">1</td>
-        <td class="org-right">1</td>
-        <td class="org-right">1</td>
-      </tr>
-    </tbody>
-  </table>
+  <blockquote>
+   <p>...</p>
+   <cite>...</cite>
+  </blockquote>
 #+end_example
 
-*** Math
 
-\begin{align}
-\mathcal{F}(a) &= \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z - a}\,dz\\
-\int_D (\nabla\cdot \mathcal{F})\,dV &=\int_{\partial D}\mathcal{F}\cdot n\, dS
-\end{align}
+** Quote
+#+BEGIN_QUOTE
+Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est voluptatem.
+Quis tempore recusandae reprehenderit distinctio sequi. Deleniti earum aut
+corporis. Ut accusamus omnis et deleniti est cumque aliquid. Quas aut est
+dolorum illum doloribus placeat molestiae[fn:lorem_ipsum] repudiandae.
+
+#+HTML: <cite>Julios Anthony</cite>
+#+END_QUOTE
+
+
+** Aside
+#+BEGIN_aside
+*Aside*: /Sed aliquam odio sed faucibus aliquam, arcu augue elementum
+justo, ut vulputate ligula sem in augue./
+
+Sed ut tempor quam.
+#+END_aside
+
+Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est voluptatem.
+Quis tempore recusandae reprehenderit distinctio sequi. Deleniti earum aut
+corporis. Ut accusamus omnis et deleniti est cumque aliquid. Quas aut est
+dolorum illum doloribus placeat molestiae repudiandae.
+
+Donec turpis justo, tempor ut iaculis in, pharetra id leo. Fusce arcu mi,
+posuere nec enim in, eleifend consequat lacus.
+
+#+HTML: <div style="clear:both"></div>
+
+** Flex container
+#+ATTR_HTML: :style display:flex; flex-wrap: wrap; gap:1rlh; font-size:3rem;
+#+BEGIN_flex
+#+HTML: <span style="flex:1; background-color:red; padding: 1rlh">Red</span>
+#+HTML: <span style="flex:1; background-color:yellow; padding: 1rlh">Yellow</span>
+#+HTML: <span style="flex:1; background-color:green; padding: 1rlh">Green</span>
+#+HTML: <span style="flex:1; background-color:cyan; padding: 1rlh">Cyan</span>
+#+HTML: <span style="flex:1; background-color:blue; padding: 1rlh">Blue</span>
+#+HTML: <span style="flex:1; background-color:magenta; padding: 1rlh">Magenta</span>
+#+END_flex
+
+# * Math
+# \begin{align}
+# \mathcal{F}(a) &= \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z - a}\,dz\\
+# \int_D (\nabla\cdot \mathcal{F})\,dV &=\int_{\partial D}\mathcal{F}\cdot n\, dS
+# \end{align}
+
 
 * Footnotes
-[fn:lorem_ipsum] https://en.wikipedia.org/wiki/Lorem_ipsum
+[fn:lorem_ipsum]
+
+Lorem ipsum is a dummy or placeholder text commonly used in graphic design,
+publishing, and web development. Its purpose is to permit a page layout to be
+designed, independently of the copy that will subsequently populate it, or to
+demonstrate various fonts of a typeface without meaningful text that could be
+distracting.
+
+https://en.wikipedia.org/wiki/Lorem_ipsum
