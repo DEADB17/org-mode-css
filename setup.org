@@ -1,0 +1,67 @@
+# https://orgmode.org/manual/Export-Settings.html
+
+# AUTHOR: Author
+# CREATOR: Creator          # Entity responsible for output generation
+# DATE: [2000-01-01 Sat]
+# EMAIL: author@eaxample.com
+#+LANGUAGE: en
+# SELECT_TAGS: export       # List of tags for export
+#+EXCLUDE_TAGS: noexport
+# TITLE: Document title
+# EXPORT_FILE_NAME: dir/file
+
+#+OPTIONS: ':t               # Toggle smart quotes
+#+OPTIONS: *:t               # Toggle emphasized text
+#+OPTIONS: -:t               # Toggle conversion of special strings
+#+OPTIONS: ::t               # Toggle fixed-width sections
+#+OPTIONS: <:t               # Toggle inclusion of time/date active/inactive stamps
+#+OPTIONS: \n:nil            # Toggle whether to preserve line breaks
+#+OPTIONS: ^:{}              # Toggle TeX-like syntax for sub- and superscripts
+#+OPTIONS: arch:headline     # Configure how archived trees are exported
+#+OPTIONS: author:t          # Toggle inclusion of author name into exported file
+#+OPTIONS: expand-links:nil  # Toggle expansion of environment variables in file paths
+#+OPTIONS: broken-links:mark # Toggles if Org should continue exporting upon finding a broken internal link
+#+OPTIONS: c:t               # Toggle inclusion of ‘CLOCK’ keywords
+#+OPTIONS: creator:t         # Toggle inclusion of creator information
+#+OPTIONS: d:(not"LOGBOOK")  # Toggle inclusion of drawers | list to include | list to exclude
+#+OPTIONS: date:t            # Toggle inclusion of a date
+#+OPTIONS: e:t               # Toggle inclusion of entities
+#+OPTIONS: email:t           # Toggle inclusion of the author’s e-mail
+#+OPTIONS: f:t               # Toggle inclusion of footnotes
+#+OPTIONS: H:4               # The number of headline levels for export. Below that they become list items
+#+OPTIONS: inline:t          # Toggle inclusion of inlinetasks
+#+OPTIONS: num:nil           # Toggle section-numbers (Prop ':UNNUMBERED: notoc' to skip)
+#+OPTIONS: p:nil             # Toggle export of planning information (Prop ‘SCHEDULED’ | ‘DEADLINE’ | ‘CLOSED’)
+#+OPTIONS: pri:t             # Toggle inclusion of priority cookies
+#+OPTIONS: prop:nil          # Toggle inclusion of property drawers | list the properties to include
+#+OPTIONS: stat:t            # Toggle inclusion of statistics cookies
+#+OPTIONS: tags:t            # Toggle inclusion of tags, may also be 'not-in-toc'
+#+OPTIONS: tasks:t           # Toggle inclusion of tasks (TODO items) | nil | todo | list the keywords to keep
+#+OPTIONS: tex:t             # Toggle nil does not export | t exports | verbatim
+#+OPTIONS: timestamp:t       # Toggle inclusion of creation time
+#+OPTIONS: title:t           # Toggle inclusion of title
+#+OPTIONS: toc:nil           # Toggle inclusion of the table of contents, or set the level limit
+#+OPTIONS: todo:t            # Toggle inclusion of TODO keyword
+#+OPTIONS: |:t               # Toggle inclusion of tables
+
+# https://orgmode.org/manual/Publishing-options.html#HTML-specific-properties-1
+
+# DESCRIPTION: Meta tag Description,
+# DESCRIPTION: more meta description
+#+HTML_CONTAINER: section
+#+HTML_DOCTYPE: html5
+# HTML_LINK_HOME:           # The URL for home link
+# HTML_LINK_UP:             # The URL for the up link
+# HTML_HEAD: <link rel="stylesheet" href="org.css">
+# HTML_HEAD:
+# HTML_HEAD_EXTRA:
+# HTML_HEAD_EXTRA:
+# KEYWORDS:                 # Keywords to describe the document’s content
+# KEYWORDS:
+# LATEX_HEADER:             # Arbitrary lines for appending to the preamble
+# LATEX_HEADER:
+# SUBTITLE:                 # The document’s subtitle
+#+OPTIONS: html-style:nil   # Toggle default style
+#+OPTIONS: html5-fancy:t    # Toggle new block elements
+
+#+MACRO: kbd @@html:<kbd>$1</kbd>@@
