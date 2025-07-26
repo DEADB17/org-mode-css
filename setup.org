@@ -52,8 +52,8 @@
 #+HTML_DOCTYPE: html5
 # HTML_LINK_HOME:           # The URL for home link
 # HTML_LINK_UP:             # The URL for the up link
-# HTML_HEAD: <link rel="stylesheet" href="org.css">
-# HTML_HEAD:
+#+HTML_HEAD: <link rel="stylesheet" href="org.css">
+#+HTML_HEAD: <script src="org.js"></script>
 # HTML_HEAD_EXTRA:
 # HTML_HEAD_EXTRA:
 # KEYWORDS:                 # Keywords to describe the document’s content
@@ -64,4 +64,15 @@
 #+OPTIONS: html-style:nil   # Toggle default style
 #+OPTIONS: html5-fancy:t    # Toggle new block elements
 
-#+MACRO: kbd @@html:<kbd>$1</kbd>@@
+#+MACRO: abbr    @@html:<abbr title="$2">$1</abbr>@@
+#+MACRO: cite    @@html:<cite href="$2">$1</cite>@@
+#+MACRO: data    @@html:<data value="$2">$1</data>@@
+#+MACRO: q       @@html:<q cite="$2">$1</q>@@
+#+MACRO: kbd     @@html:<kbd>$1</kbd>@@
+#+MACRO: samp    @@html:<samp>$1</samp>@@
+#+MACRO: summary @@html:<summary>$1</summary>@@
+#+MACRO: var     @@html:<var>$1</var>@@
+#+MACRO: wbr     @@html:<wbr>@@
+
+#+TODO: MAYBE TODO STARTED | DONE
+#+TODO: BLOCKED | CANCELLED

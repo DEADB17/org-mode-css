@@ -1,10 +1,7 @@
 # -*- org-adapt-indentation: nil; org-confirm-babel-evaluate: nil; org-html-mathjax-template: ""; -*-
 #+SETUPFILE: setup.org
-#+OPTIONS: num:3 d:t p:t prop:t
+#+OPTIONS: num:3 d:t p:t prop:t H:5
 #+EXPORT_FILE_NAME: docs/index
-#+HTML_HEAD: <link rel="stylesheet" href="simple.css">
-#+HTML_HEAD: <link rel="stylesheet" href="org.css">
-#+HTML_HEAD: <script src="org.js"></script>
 #+author: DEADB17
 #+email: deadb17@gmail.com
 #+date: <2025-07-11 Fri>
@@ -29,8 +26,7 @@ lorem quis accumsan vehicula.
 
 ** [#A] Heading with Priority
 
-** Heading with Tag                                            :tag:short_tag:a_longer_tag:tag:
-
+** Heading with Tag                                                 :tag:short_tag:a_longer_tag:
 ** Heading with [fn:1]
 
 ** Heading with =schedule=
@@ -51,7 +47,7 @@ DEADLINE: <2025-12-31 Wed 23:59>
 - State "NEXT"       from "TODO"       [2019-07-01 Mon 18:42]
 :END:
 
-** DONE [#C] Heading with all                          :short_tag:a_longer_tag:tag:reflect:tag:
+** DONE [#C] Heading with all                              :tag:short_tag:a_longer_tag:reflect:
 DEADLINE: <2025-07-15 Tue 13:00> SCHEDULED: <2025-07-15 Tue 13:00>
 :PROPERTIES:
 :ORDERED:  t
@@ -68,33 +64,59 @@ DEADLINE: <2025-07-15 Tue 13:00> SCHEDULED: <2025-07-15 Tue 13:00>
 :END:
 
 
+* Custom TODO states
+** MAYBE Maybe state
+** BLOCKED Blocked state
+** TODO To do state
+** STARTED Started state
+** DONE Done state
+** CANCELLED Cancelled state
+
+
+
 * Inline
+** org
 - *bold*
 - /italic/ /*italic bold*/
 - _underline_ _/underline italic/_ _/*underline italic bold*/_
 - +strike+ +/strike italic/+ +/*strike italic bold*/+
+- [[./][a link]]
 - =verbatim=
 - ~code~
 - sub_{script}
 - super^{script}
+- [fn:1: Inline footnote]
+- [1991-06-06 Thu 13:00-13:13]
+- <2000-01-01 Sat>--<2000-01-01 Sat>
+
+** Smart punctuation
 - "dq" 'sq' shy\-hyphen en--dash em---dash elipsis...
+
+** Special symbols
 - \dag \ddag \P \S \loz \bull
 - \copy \reg \trade
 - \larr \uarr \harr \darr \rarr
 - \leftarrow \Leftarrow \uparrow \Uparrow \Downarrow \downarrow \Rightarrow \rightarrow
 - \lt \le \ne \approx \cong \ge \gt \infin
 - \in \ni \sub \sup \lor \land \not
-- [fn:1: Inline footnote]
-- [1991-06-06 Thu 13:00-13:13]
-- <2000-01-01 Sat>--<2000-01-01 Sat>
+
+** HTML inline elements
+- {{{abbr(abbr, Abbreviation or Acronym)}}}
+- {{{cite(cite, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/cite)}}}
+- {{{data(data, #FF0000)}}}
+- kbd: {{{kbd(ctrl)}}} + {{{kbd(alt)}}} + {{{kbd(del)}}}
+- q: {{{q(You Jig\, you amble\, and you lisp., https://en.wikipedia.org/wiki/William_Shakespeare)}}}
+- {{{samp(samp)}}}
+- {{{var(var)}}}
 
 
-* Heading 1
-** Heading 2
-*** Heading 3
-**** Heading 4
-***** Heading 5
+* Heading 1 --- =h2=
+** Heading 2 --- =h3=
+*** Heading 3 --- =h4=
+**** Heading 4 --- =h5=
+***** Heading 5 --- =h6=
 ****** Heading 6
+******* Heading 7
 
 
 * List
@@ -127,9 +149,19 @@ DEADLINE: <2025-07-15 Tue 13:00> SCHEDULED: <2025-07-15 Tue 13:00>
   - Urna tempor :: pulvinar vivamus fringilla lacus nec metus. Iaculis massa
     nisl malesuada lacinia integer nunc posuere.
 
-- Semper vel class aptent taciti sociosqu ad litora :: Conubia nostra inceptos
-  himenaeos orci varius natoque penatibus.Dis parturient montes nascetur
-  ridiculus mus donec rhoncus.
+    - Duis in facilisis ante, quis faucibus dolor :: Etiam maximus lorem quis
+      accumsan vehicula.
+
+    - Lorem ipsum :: dolor sit amet consectetur adipiscing elit. Ex sapien vitae
+      pellentesque sem placerat in id. Pretium tellus duis convallis tempus leo eu
+      aenean.
+
+  - Semper vel class aptent taciti sociosqu ad litora :: Conubia nostra inceptos
+    himenaeos orci varius natoque penatibus.Dis parturient montes nascetur
+    ridiculus mus donec rhoncus.
+
+- Urna tempor :: pulvinar vivamus fringilla lacus nec metus. Iaculis massa
+  nisl malesuada lacinia integer nunc posuere.
 
 ** Check list
 - [-] Doing
@@ -140,14 +172,24 @@ DEADLINE: <2025-07-15 Tue 13:00> SCHEDULED: <2025-07-15 Tue 13:00>
 
 * Table
 
-#+CAPTION: Table Caption
-| \(N\) | \(N^2\) | \(N^3\) | \(N^4\) | \(\sqrt n\) | \(\sqrt[4]N\) |
-|-------+---------+---------+---------+-------------+---------------|
-|     1 |       1 |       1 |       1 |           1 |             1 |
-|     2 |       4 |       8 |      16 |      1.4142 |        1.1892 |
-|-------+---------+---------+---------+-------------+---------------|
-|     3 |       9 |      27 |      81 |      1.7321 |        1.3161 |
+#+CAPTION: Short table
+| (N) | (N^2) | (N^3) | (N^4) |  (sqrt n) | (sqrt[4]N) |
+|-----+-------+-------+-------+-----------+------------|
+|   1 |     1 |     1 |     1 |         1 |          1 |
+|   2 |     4 |     8 |    16 | 1.4142136 |  1.1892071 |
+|-----+-------+-------+-------+-----------+------------|
+|   3 |     9 |    27 |    81 | 1.7320508 |  1.3160740 |
 #+TBLFM: $2=$1^2::$3=$1^3::$4=$1^4::$5=sqrt($1)::$6=sqrt(sqrt(($1)))
+
+#+ATTR_HTML: :style  width:max-content;
+#+CAPTION: Long Table
+| Rank |    Time | Team                                                                     | Nation        | Date           | Place       |
+|------+---------+--------------------------------------------------------------------------+---------------+----------------+-------------|
+|    1 | 2:54.29 | Andrew Valmon, Quincy Watts, Butch Reynolds, Michael Johnson             | United States | 22 August 1993 | Stuttgart   |
+|    2 | 2:54.53 | Bayapo Ndori, Busang Collen Kebinatshipi, Anthony Pesela, Letsile Tebogo | Botswana      | 10 August 2024 | Saint-Denis |
+|    3 | 2:55.83 | Alex Haydock-Wilson, Matthew Hudson-Smith, Lewis Davey, Charles Dobson   | Great Britain | 10 August 2024 | Saint-Denis |
+|    4 | 2:56.72 | Chris Brown, Demetrius Pinder, Michael Mathieu, Ramon Miller             | Bahamas       | 10 August 2012 | London      |
+|    5 | 2:56.75 | Michael McDonald, Gregory Haughton, Danny McFarlane, Davian Clarke       | Jamaica       | 10 August 1997 | Athens      |
 
 
 * Picture
@@ -165,17 +207,18 @@ And a really wide picture.
 
 ** Code
 #+begin_src css
-  h1 {font-size: 3.052em;}
-  h2 {font-size: 2.441em;}
-  h3 {font-size: 1.953em;}
-  h4 {font-size: 1.563em;}
-  h5 {font-size: 1.25em;}
+   h1 {font-size: 3.052em;}
+   h2 {font-size: 2.441em;}
+   h3 {font-size: 1.953em;}
+   h4 {font-size: 1.563em;}
+   h5 {font-size: 1.25em;}
 
-  body > * {
-    max-width: 60rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
-  }
+   body >
+   ,* {
+     max-width: 60rem;
+     margin-left: 1rem;
+     margin-right: 1rem;
+   }
 #+end_src
 
 ** Example
@@ -186,7 +229,6 @@ And a really wide picture.
   </blockquote>
 #+end_example
 
-
 ** Quote
 #+BEGIN_QUOTE
 Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est voluptatem.
@@ -196,7 +238,6 @@ dolorum illum doloribus placeat molestiae[fn:lorem_ipsum] repudiandae.
 
 #+HTML: <cite>Julios Anthony</cite>
 #+END_QUOTE
-
 
 ** Aside
 #+BEGIN_aside
@@ -216,22 +257,129 @@ posuere nec enim in, eleifend consequat lacus.
 
 #+HTML: <div style="clear:both"></div>
 
-** Flex container
-#+ATTR_HTML: :style display:flex; flex-wrap: wrap; gap:1rlh; font-size:3rem;
-#+BEGIN_flex
-#+HTML: <span style="flex:1; background-color:red; padding: 1rlh">Red</span>
-#+HTML: <span style="flex:1; background-color:yellow; padding: 1rlh">Yellow</span>
-#+HTML: <span style="flex:1; background-color:green; padding: 1rlh">Green</span>
-#+HTML: <span style="flex:1; background-color:cyan; padding: 1rlh">Cyan</span>
-#+HTML: <span style="flex:1; background-color:blue; padding: 1rlh">Blue</span>
-#+HTML: <span style="flex:1; background-color:magenta; padding: 1rlh">Magenta</span>
-#+END_flex
+** Details
+#+BEGIN_details
+#+HTML: <summary>Summary</summary>
+Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est voluptatem.
+Quis tempore recusandae reprehenderit distinctio sequi. Deleniti earum aut
+corporis. Ut accusamus omnis et deleniti est cumque aliquid. Quas aut est
+dolorum illum doloribus placeat molestiae repudiandae.
+#+END_details
+
+** Alerts
+Follow the same convention as [[https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts][GitHub flavored MD]].
+
+#+BEGIN_important
+Key information users need to know to achieve their goal.
+#+END_important
+
+#+BEGIN_note
+Useful information that users should know, even when skimming content.
+#+END_note
+
+#+BEGIN_tip
+Helpful advice for doing things better or more easily.
+#+END_tip
+
+#+BEGIN_warning
+Urgent info that needs immediate user attention to avoid problems.
+#+END_warning
+
+#+BEGIN_caution
+Advises about risks or negative outcomes of certain actions.
+#+END_caution
 
 # * Math
 # \begin{align}
 # \mathcal{F}(a) &= \frac{1}{2\pi i}\oint_\gamma \frac{f(z)}{z - a}\,dz\\
 # \int_D (\nabla\cdot \mathcal{F})\,dV &=\int_{\partial D}\mathcal{F}\cdot n\, dS
 # \end{align}
+
+** Flex container
+CSS utility classes for ~flex~ following [[https://v3.tailwindcss.com/docs/flex][Tailwind]]'s conventions.
+
+*** Examples
+~#+ATTR_HTML: :class flex~
+#+ATTR_HTML: :class flex
+#+BEGIN_flex
+#+HTML: <span style="background-color:red; padding: 1rlh">Red</span>
+#+HTML: <span style="background-color:yellow; padding: 1rlh">Yellow</span>
+#+HTML: <span style="background-color:green; padding: 1rlh">Green</span>
+#+HTML: <span style="background-color:cyan; padding: 1rlh">Cyan</span>
+#+HTML: <span style="background-color:blue; padding: 1rlh">Blue</span>
+#+HTML: <span style="background-color:magenta; padding: 1rlh">Magenta</span>
+#+END_flex
+
+~#+ATTR_HTML: :class flex wrap one gap~
+#+ATTR_HTML: :class flex wrap one gap
+#+BEGIN_flex
+#+HTML: <span style="background-color:red; padding: 1rlh">Red</span>
+#+HTML: <span style="background-color:yellow; padding: 1rlh">Yellow</span>
+#+HTML: <span style="background-color:green; padding: 1rlh">Green</span>
+#+HTML: <span style="background-color:cyan; padding: 1rlh">Cyan</span>
+#+HTML: <span style="background-color:blue; padding: 1rlh">Blue</span>
+#+HTML: <span style="background-color:magenta; padding: 1rlh">Magenta</span>
+#+HTML: <span style="background-color:blue; padding: 1rlh">Blue</span>
+#+HTML: <span style="background-color:cyan; padding: 1rlh">Cyan</span>
+#+HTML: <span style="background-color:green; padding: 1rlh">Green</span>
+#+HTML: <span style="background-color:yellow; padding: 1rlh">Yellow</span>
+#+HTML: <span style="background-color:red; padding: 1rlh">Red</span>
+#+END_flex
+
+~#+ATTR_HTML: :class flex col items-center~
+#+ATTR_HTML: :class flex col items-center
+#+BEGIN_flex
+#+HTML: <span style="background-color:red; padding: 1rlh">Red</span>
+#+HTML: <span style="background-color:green; padding: 1rlh">Green</span>
+#+HTML: <span style="background-color:blue; padding: 1rlh">Blue</span>
+#+END_flex
+
+*** Classes
+#+begin_src css
+  .flex { display: flex; }
+
+  .flex.row          { flex-direction: row; }
+  .flex.row-reverse  { flex-direction: row-reverse; }
+
+  .flex.col          { flex-direction: column; }
+  .flex.col-reverse  { flex-direction: column-reverse; }
+
+  .flex.wrap         { flex-wrap: wrap; }
+  .flex.wrap-reverse { flex-wrap: wrap-reverse; }
+
+  .flex.one > *      { flex: 1 1 0%; }
+  .flex.auto > *     { flex: 1 1 auto; }
+  .flex.initial > *  { flex: 0 1 auto; }
+
+  .gap   { gap: 1rlh; }
+  .gap-x { column-gap: 1rlh; }
+  .gap-y { row-gap: 1rlh; }
+
+  .justify-normal  { justify-content: normal; }
+  .justify-start   { justify-content: start; }
+  .justify-end     { justify-content: end; }
+  .justify-center  { justify-content: center; }
+  .justify-between { justify-content: space-between; }
+  .justify-around  { justify-content: space-around; }
+  .justify-evenly  { justify-content: space-evenly; }
+  .justify-stretch { justify-content: stretch; }
+
+  .content-normal   { align-content: normal; }
+  .content-center   { align-content: center; }
+  .content-start    { align-content: start; }
+  .content-end      { align-content: end; }
+  .content-between  { align-content: space-between; }
+  .content-around   { align-content: space-around; }
+  .content-evenly   { align-content: space-evenly; }
+  .content-baseline { align-content: baseline; }
+  .content-stretch  { align-content: stretch; }
+
+  .items-start    { align-items: start; }
+  .items-end      { align-items: end; }
+  .items-center   { align-items: center; }
+  .items-baseline { align-items: baseline; }
+  .items-stretch  { align-items: stretch; }
+#+end_src
 
 
 * Footnotes

@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2025-07-15 Tue 10:08 -->
+<!-- 2025-07-30 Wed 10:23 -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Sample org-mode file</title>
 <meta name="author" content="DEADB17" />
 <meta name="generator" content="Org Mode" />
-<link rel="stylesheet" href="simple.css">
-<link rel="stylesheet" href="simple-test.css">
+<link rel="stylesheet" href="org.css">
 <script src="org.js"></script>
 </head>
 <body>
@@ -28,84 +27,107 @@ lorem quis accumsan vehicula.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents" role="doc-toc">
 <ul>
-<li><a href="#org95dd9ee">1. orgmode headings</a>
+<li><a href="#orgb02b0d6">1. orgmode headings</a>
 <ul>
-<li><a href="#org7c14e38">1.1. <span class="todo TODO">TODO</span> Heading with TODO</a></li>
-<li><a href="#org1a6dead">1.2. <span class="done DONE">DONE</span> Heading with DONE</a></li>
-<li><a href="#orga701f6a">1.3. <span class="priority">[A]</span> Heading with Priority</a></li>
-<li><a href="#org4e1801e">1.4. Heading with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span>&#xa0;<span class="tag">tag</span></span></a></li>
-<li><a href="#org26e4e3d">1.5. Heading with </a></li>
-<li><a href="#org2f7ec7d">1.6. Heading with <code>schedule</code></a></li>
-<li><a href="#org2fea1e8">1.7. Heading with <code>deadline</code></a></li>
+<li><a href="#org118fcfe">1.1. <span class="todo TODO">TODO</span> Heading with TODO</a></li>
+<li><a href="#orgd6dc422">1.2. <span class="done DONE">DONE</span> Heading with DONE</a></li>
+<li><a href="#orga1f019c">1.3. <span class="priority">[A]</span> Heading with Priority</a></li>
+<li><a href="#org61e7430">1.4. Heading with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span></span></a></li>
+<li><a href="#org452a12c">1.5. Heading with </a></li>
+<li><a href="#org6e37abe">1.6. Heading with <code>schedule</code></a></li>
+<li><a href="#org90ccaab">1.7. Heading with <code>deadline</code></a></li>
 <li><a href="#fragment">1.8. Heading with <code>properties</code></a></li>
-<li><a href="#org37d2b71">1.9. Heading with <code>logbook</code></a></li>
-<li><a href="#orgeda50e4">1.10. <span class="done DONE">DONE</span> Heading with all&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span>&#xa0;<span class="tag">tag</span>&#xa0;<span class="reflect">reflect</span></span></a></li>
+<li><a href="#org808cbc0">1.9. Heading with <code>logbook</code></a></li>
+<li><a href="#orgfd9ab42">1.10. <span class="done DONE">DONE</span> <span class="priority">[C]</span> Heading with all&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span>&#xa0;<span class="reflect">reflect</span></span></a></li>
 </ul>
 </li>
-<li><a href="#orgcb7ac7e">2. Inline</a></li>
-<li><a href="#org8d21e06">3. Heading 1</a>
+<li><a href="#orga2a6c8b">2. Custom TODO states</a>
 <ul>
-<li><a href="#orgd5fbc78">3.1. Heading 2</a>
+<li><a href="#org65ebd04">2.1. <span class="todo MAYBE">MAYBE</span> Maybe state</a></li>
+<li><a href="#orgae62dda">2.2. <span class="todo BLOCKED">BLOCKED</span> Blocked state</a></li>
+<li><a href="#org4aece63">2.3. <span class="todo TODO">TODO</span> To do state</a></li>
+<li><a href="#orge5d945e">2.4. <span class="todo STARTED">STARTED</span> Started state</a></li>
+<li><a href="#orgc46d06b">2.5. <span class="done DONE">DONE</span> Done state</a></li>
+<li><a href="#orgb69bb94">2.6. <span class="done CANCELLED">CANCELLED</span> Cancelled state</a></li>
+</ul>
+</li>
+<li><a href="#org110d739">3. Inline</a>
 <ul>
-<li><a href="#org08455e6">3.1.1. Heading 3</a></li>
+<li><a href="#orge5ae817">3.1. org</a></li>
+<li><a href="#org7a9c4d1">3.2. Smart punctuation</a></li>
+<li><a href="#org99f44c4">3.3. Special symbols</a></li>
+<li><a href="#org7aa6852">3.4. HTML inline elements</a></li>
+</ul>
+</li>
+<li><a href="#org20e0ac7">4. Heading 1 &#x2014; <code>h2</code></a>
+<ul>
+<li><a href="#orgaa94b61">4.1. Heading 2 &#x2014; <code>h3</code></a>
+<ul>
+<li><a href="#org4469c2d">4.1.1. Heading 3 &#x2014; <code>h4</code></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#orgacdd824">4. List</a>
+<li><a href="#org03e7ac4">5. List</a>
 <ul>
-<li><a href="#org93563b6">4.1. Ordered list</a></li>
-<li><a href="#org14e8bcc">4.2. Unordered list</a></li>
-<li><a href="#orgdac8a28">4.3. Definition list</a></li>
-<li><a href="#org8fce7f1">4.4. Check list</a></li>
+<li><a href="#orgde66b45">5.1. Ordered list</a></li>
+<li><a href="#orga0b2847">5.2. Unordered list</a></li>
+<li><a href="#org139aa92">5.3. Definition list</a></li>
+<li><a href="#org10a5fb3">5.4. Check list</a></li>
 </ul>
 </li>
-<li><a href="#org069b38f">5. Table</a></li>
-<li><a href="#org33845bd">6. Picture</a></li>
-<li><a href="#orgc73b652">7. Blocks</a>
+<li><a href="#org50558b9">6. Table</a></li>
+<li><a href="#org7f60348">7. Picture</a></li>
+<li><a href="#org6bf0053">8. Blocks</a>
 <ul>
-<li><a href="#org7870bad">7.1. Code</a></li>
-<li><a href="#orga581115">7.2. Example</a></li>
-<li><a href="#org529e35e">7.3. Quote</a></li>
-<li><a href="#org6977a00">7.4. Aside</a></li>
-<li><a href="#org5acda6d">7.5. Flex container</a></li>
+<li><a href="#orgc3e2784">8.1. Code</a></li>
+<li><a href="#orgf98a9df">8.2. Example</a></li>
+<li><a href="#org801fc27">8.3. Quote</a></li>
+<li><a href="#orgb3f0752">8.4. Aside</a></li>
+<li><a href="#orgb48ecad">8.5. Details</a></li>
+<li><a href="#org8c3f22f">8.6. Alerts</a></li>
+<li><a href="#org35a4ce4">8.7. Flex container</a>
+<ul>
+<li><a href="#org4ce5b7b">8.7.1. Examples</a></li>
+<li><a href="#orgb5626a0">8.7.2. Classes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<section id="outline-container-org95dd9ee" class="outline-2">
-<h2 id="org95dd9ee"><span class="section-number-2">1.</span> orgmode headings</h2>
+<section id="outline-container-orgb02b0d6" class="outline-2">
+<h2 id="orgb02b0d6"><span class="section-number-2">1.</span> orgmode headings</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org7c14e38" class="outline-3">
-<h3 id="org7c14e38"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> Heading with TODO</h3>
+<div id="outline-container-org118fcfe" class="outline-3">
+<h3 id="org118fcfe"><span class="section-number-3">1.1.</span> <span class="todo TODO">TODO</span> Heading with TODO</h3>
 </div>
 
-<div id="outline-container-org1a6dead" class="outline-3">
-<h3 id="org1a6dead"><span class="section-number-3">1.2.</span> <span class="done DONE">DONE</span> Heading with DONE</h3>
+<div id="outline-container-orgd6dc422" class="outline-3">
+<h3 id="orgd6dc422"><span class="section-number-3">1.2.</span> <span class="done DONE">DONE</span> Heading with DONE</h3>
 </div>
 
-<div id="outline-container-orga701f6a" class="outline-3">
-<h3 id="orga701f6a"><span class="section-number-3">1.3.</span> <span class="priority">[A]</span> Heading with Priority</h3>
+<div id="outline-container-orga1f019c" class="outline-3">
+<h3 id="orga1f019c"><span class="section-number-3">1.3.</span> <span class="priority">[A]</span> Heading with Priority</h3>
 </div>
 
-<div id="outline-container-org4e1801e" class="outline-3">
-<h3 id="org4e1801e"><span class="section-number-3">1.4.</span> Heading with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span>&#xa0;<span class="tag">tag</span></span></h3>
+<div id="outline-container-org61e7430" class="outline-3">
+<h3 id="org61e7430"><span class="section-number-3">1.4.</span> Heading with Tag&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span></span></h3>
+</div>
+<div id="outline-container-org452a12c" class="outline-3">
+<h3 id="org452a12c"><span class="section-number-3">1.5.</span> Heading with <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></h3>
 </div>
 
-<div id="outline-container-org26e4e3d" class="outline-3">
-<h3 id="org26e4e3d"><span class="section-number-3">1.5.</span> Heading with <sup><a id="fnr.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></h3>
-</div>
-
-<div id="outline-container-org2f7ec7d" class="outline-3">
-<h3 id="org2f7ec7d"><span class="section-number-3">1.6.</span> Heading with <code>schedule</code></h3>
+<div id="outline-container-org6e37abe" class="outline-3">
+<h3 id="org6e37abe"><span class="section-number-3">1.6.</span> Heading with <code>schedule</code></h3>
 <div class="outline-text-3" id="text-1-6">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2025-12-31 Wed&gt;</span></span></p>
 </div>
 </div>
-<div id="outline-container-org2fea1e8" class="outline-3">
-<h3 id="org2fea1e8"><span class="section-number-3">1.7.</span> Heading with <code>deadline</code></h3>
+<div id="outline-container-org90ccaab" class="outline-3">
+<h3 id="org90ccaab"><span class="section-number-3">1.7.</span> Heading with <code>deadline</code></h3>
 <div class="outline-text-3" id="text-1-7">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2025-12-31 Wed 23:59&gt;</span></span></p>
 </div>
@@ -118,8 +140,8 @@ CUSTOM_ID: fragment
 </pre>
 </div>
 </div>
-<div id="outline-container-org37d2b71" class="outline-3">
-<h3 id="org37d2b71"><span class="section-number-3">1.9.</span> Heading with <code>logbook</code></h3>
+<div id="outline-container-org808cbc0" class="outline-3">
+<h3 id="org808cbc0"><span class="section-number-3">1.9.</span> Heading with <code>logbook</code></h3>
 <div class="outline-text-3" id="text-1-9">
 <ul class="org-ul">
 <li>State &ldquo;NEXT&rdquo;       from &ldquo;MAYBE&rdquo;      <span class="timestamp-wrapper"><span class="timestamp">[2019-07-20 Sat 12:35]</span></span></li>
@@ -128,8 +150,8 @@ CUSTOM_ID: fragment
 </ul>
 </div>
 </div>
-<div id="outline-container-orgeda50e4" class="outline-3">
-<h3 id="orgeda50e4"><span class="section-number-3">1.10.</span> <span class="done DONE">DONE</span> Heading with all&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span>&#xa0;<span class="tag">tag</span>&#xa0;<span class="reflect">reflect</span></span></h3>
+<div id="outline-container-orgfd9ab42" class="outline-3">
+<h3 id="orgfd9ab42"><span class="section-number-3">1.10.</span> <span class="done DONE">DONE</span> <span class="priority">[C]</span> Heading with all&#xa0;&#xa0;&#xa0;<span class="tag"><span class="tag">tag</span>&#xa0;<span class="short_tag">short_tag</span>&#xa0;<span class="a_longer_tag">a_longer_tag</span>&#xa0;<span class="reflect">reflect</span></span></h3>
 <div class="outline-text-3" id="text-1-10">
 <p><span class="timestamp-wrapper"><span class="timestamp-kwd">DEADLINE:</span> <span class="timestamp">&lt;2025-07-15 Tue 13:00&gt; </span> <span class="timestamp-kwd">SCHEDULED:</span> <span class="timestamp">&lt;2025-07-15 Tue 13:00&gt;</span></span></p>
 <pre class="example">
@@ -150,65 +172,127 @@ A note</li>
 </div>
 </div>
 </section>
-<section id="outline-container-orgcb7ac7e" class="outline-2">
-<h2 id="orgcb7ac7e"><span class="section-number-2">2.</span> Inline</h2>
+<section id="outline-container-orga2a6c8b" class="outline-2">
+<h2 id="orga2a6c8b"><span class="section-number-2">2.</span> Custom TODO states</h2>
 <div class="outline-text-2" id="text-2">
+</div>
+<div id="outline-container-org65ebd04" class="outline-3">
+<h3 id="org65ebd04"><span class="section-number-3">2.1.</span> <span class="todo MAYBE">MAYBE</span> Maybe state</h3>
+</div>
+<div id="outline-container-orgae62dda" class="outline-3">
+<h3 id="orgae62dda"><span class="section-number-3">2.2.</span> <span class="todo BLOCKED">BLOCKED</span> Blocked state</h3>
+</div>
+<div id="outline-container-org4aece63" class="outline-3">
+<h3 id="org4aece63"><span class="section-number-3">2.3.</span> <span class="todo TODO">TODO</span> To do state</h3>
+</div>
+<div id="outline-container-orge5d945e" class="outline-3">
+<h3 id="orge5d945e"><span class="section-number-3">2.4.</span> <span class="todo STARTED">STARTED</span> Started state</h3>
+</div>
+<div id="outline-container-orgc46d06b" class="outline-3">
+<h3 id="orgc46d06b"><span class="section-number-3">2.5.</span> <span class="done DONE">DONE</span> Done state</h3>
+</div>
+<div id="outline-container-orgb69bb94" class="outline-3">
+<h3 id="orgb69bb94"><span class="section-number-3">2.6.</span> <span class="done CANCELLED">CANCELLED</span> Cancelled state</h3>
+</div>
+</section>
+<section id="outline-container-org110d739" class="outline-2">
+<h2 id="org110d739"><span class="section-number-2">3.</span> Inline</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orge5ae817" class="outline-3">
+<h3 id="orge5ae817"><span class="section-number-3">3.1.</span> org</h3>
+<div class="outline-text-3" id="text-3-1">
 <ul class="org-ul">
 <li><b>bold</b></li>
 <li><i>italic</i> <i><b>italic bold</b></i></li>
 <li><span class="underline">underline</span> <span class="underline"><i>underline italic</i></span> <span class="underline"><i><b>underline italic bold</b></i></span></li>
 <li><del>strike</del> <del><i>strike italic</i></del> <del><i><b>strike italic bold</b></i></del></li>
+<li><a href="./">a link</a></li>
 <li><code>verbatim</code></li>
 <li><code>code</code></li>
 <li>sub<sub>script</sub></li>
 <li>super<sup>script</sup></li>
+<li><sup><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></li>
+<li><span class="timestamp-wrapper"><span class="timestamp">[1991-06-06 Thu 13:00-13:13]</span></span></li>
+<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2000-01-01 Sat&gt;&#x2013;&lt;2000-01-01 Sat&gt;</span></span></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org7a9c4d1" class="outline-3">
+<h3 id="org7a9c4d1"><span class="section-number-3">3.2.</span> Smart punctuation</h3>
+<div class="outline-text-3" id="text-3-2">
+<ul class="org-ul">
 <li>&ldquo;dq&rdquo; &rsquo;sq&rsquo; shy&#x00ad;hyphen en&#x2013;dash em&#x2014;dash elipsis&#x2026;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org99f44c4" class="outline-3">
+<h3 id="org99f44c4"><span class="section-number-3">3.3.</span> Special symbols</h3>
+<div class="outline-text-3" id="text-3-3">
+<ul class="org-ul">
 <li>&dagger; &Dagger; &para; &sect; &loz; &bull;</li>
 <li>&copy; &reg; &trade;</li>
 <li>&larr; &uarr; &harr; &darr; &rarr;</li>
 <li>&larr; &lArr; &uarr; &uArr; &dArr; &darr; &rArr; &rarr;</li>
 <li>&lt; &le; &ne; &asymp; &cong; &ge; &gt; &infin;</li>
 <li>&isin; &ni; &sub; &sup; &or; &and; &not;</li>
-<li><sup><a id="fnr.1.1" class="footref" href="#fn.1" role="doc-backlink">1</a></sup></li>
-<li><span class="timestamp-wrapper"><span class="timestamp">[1991-06-06 Thu 13:00-13:13]</span></span></li>
-<li><span class="timestamp-wrapper"><span class="timestamp">&lt;2000-01-01 Sat&gt;&#x2013;&lt;2000-01-01 Sat&gt;</span></span></li>
 </ul>
 </div>
+</div>
+<div id="outline-container-org7aa6852" class="outline-3">
+<h3 id="org7aa6852"><span class="section-number-3">3.4.</span> HTML inline elements</h3>
+<div class="outline-text-3" id="text-3-4">
+<ul class="org-ul">
+<li><abbr title=" Abbreviation or Acronym">abbr</abbr></li>
+<li><cite href=" https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/cite">cite</cite></li>
+<li><data value=" #FF0000">data</data></li>
+<li>kbd: <kbd>ctrl</kbd> + <kbd>alt</kbd> + <kbd>del</kbd></li>
+<li>q: <q cite=" https://en.wikipedia.org/wiki/William_Shakespeare">You Jig, you amble, and you lisp.</q></li>
+<li><samp>samp</samp></li>
+<li><var>var</var></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="outline-container-org8d21e06" class="outline-2">
-<h2 id="org8d21e06"><span class="section-number-2">3.</span> Heading 1</h2>
-<div class="outline-text-2" id="text-3">
+<section id="outline-container-org20e0ac7" class="outline-2">
+<h2 id="org20e0ac7"><span class="section-number-2">4.</span> Heading 1 &#x2014; <code>h2</code></h2>
+<div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgd5fbc78" class="outline-3">
-<h3 id="orgd5fbc78"><span class="section-number-3">3.1.</span> Heading 2</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-orgaa94b61" class="outline-3">
+<h3 id="orgaa94b61"><span class="section-number-3">4.1.</span> Heading 2 &#x2014; <code>h3</code></h3>
+<div class="outline-text-3" id="text-4-1">
 </div>
-<div id="outline-container-org08455e6" class="outline-4">
-<h4 id="org08455e6"><span class="section-number-4">3.1.1.</span> Heading 3</h4>
-<div class="outline-text-4" id="text-3-1-1">
+<div id="outline-container-org4469c2d" class="outline-4">
+<h4 id="org4469c2d"><span class="section-number-4">4.1.1.</span> Heading 3 &#x2014; <code>h4</code></h4>
+<div class="outline-text-4" id="text-4-1-1">
 </div>
-<div id="outline-container-org702dea2" class="outline-5">
-<h5 id="org702dea2">Heading 4</h5>
-<div class="outline-text-5" id="text-org702dea2">
+<div id="outline-container-org154d288" class="outline-5">
+<h5 id="org154d288">Heading 4 &#x2014; <code>h5</code></h5>
+<div class="outline-text-5" id="text-org154d288">
+</div>
+<div id="outline-container-orgfef003a" class="outline-6">
+<h6 id="orgfef003a">Heading 5 &#x2014; <code>h6</code></h6>
+<div class="outline-text-6" id="text-orgfef003a">
 </div>
 <ul class="org-ul">
-<li><a id="org4cea6bc"></a>Heading 5<br>
+<li><a id="org81d342b"></a>Heading 6<br>
 <ul class="org-ul">
-<li><a id="org87c67c8"></a>Heading 6<br></li>
+<li><a id="org33df259"></a>Heading 7<br></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 </div>
-</section>
-<section id="outline-container-orgacdd824" class="outline-2">
-<h2 id="orgacdd824"><span class="section-number-2">4.</span> List</h2>
-<div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org93563b6" class="outline-3">
-<h3 id="org93563b6"><span class="section-number-3">4.1.</span> Ordered list</h3>
-<div class="outline-text-3" id="text-4-1">
+</section>
+<section id="outline-container-org03e7ac4" class="outline-2">
+<h2 id="org03e7ac4"><span class="section-number-2">5.</span> List</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgde66b45" class="outline-3">
+<h3 id="orgde66b45"><span class="section-number-3">5.1.</span> Ordered list</h3>
+<div class="outline-text-3" id="text-5-1">
 <ol class="org-ol">
 <li>Lorem ipsum dolor sit amet consectetur adipiscing elit.
 <ol class="org-ol">
@@ -227,9 +311,9 @@ A note</li>
 </ol>
 </div>
 </div>
-<div id="outline-container-org14e8bcc" class="outline-3">
-<h3 id="org14e8bcc"><span class="section-number-3">4.2.</span> Unordered list</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-orga0b2847" class="outline-3">
+<h3 id="orga0b2847"><span class="section-number-3">5.2.</span> Unordered list</h3>
+<div class="outline-text-3" id="text-5-2">
 <ul class="org-ul">
 <li>Lorem ipsum dolor sit amet consectetur adipiscing elit.
 <ul class="org-ul">
@@ -248,9 +332,9 @@ A note</li>
 </ul>
 </div>
 </div>
-<div id="outline-container-orgdac8a28" class="outline-3">
-<h3 id="orgdac8a28"><span class="section-number-3">4.3.</span> Definition list</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-org139aa92" class="outline-3">
+<h3 id="org139aa92"><span class="section-number-3">5.3.</span> Definition list</h3>
+<div class="outline-text-3" id="text-5-3">
 <dl class="org-dl">
 <dt>Lorem ipsum</dt><dd>dolor sit amet consectetur adipiscing elit. Ex sapien vitae
 pellentesque sem placerat in id. Pretium tellus duis convallis tempus leo eu
@@ -258,18 +342,30 @@ aenean.
 
 <dl class="org-dl">
 <dt>Urna tempor</dt><dd>pulvinar vivamus fringilla lacus nec metus. Iaculis massa
-nisl malesuada lacinia integer nunc posuere.</dd>
+nisl malesuada lacinia integer nunc posuere.
+
+<dl class="org-dl">
+<dt>Duis in facilisis ante, quis faucibus dolor</dt><dd>Etiam maximus lorem quis
+accumsan vehicula.</dd>
+
+<dt>Lorem ipsum</dt><dd>dolor sit amet consectetur adipiscing elit. Ex sapien vitae
+pellentesque sem placerat in id. Pretium tellus duis convallis tempus leo eu
+aenean.</dd>
 </dl></dd>
 
 <dt>Semper vel class aptent taciti sociosqu ad litora</dt><dd>Conubia nostra inceptos
 himenaeos orci varius natoque penatibus.Dis parturient montes nascetur
 ridiculus mus donec rhoncus.</dd>
+</dl></dd>
+
+<dt>Urna tempor</dt><dd>pulvinar vivamus fringilla lacus nec metus. Iaculis massa
+nisl malesuada lacinia integer nunc posuere.</dd>
 </dl>
 </div>
 </div>
-<div id="outline-container-org8fce7f1" class="outline-3">
-<h3 id="org8fce7f1"><span class="section-number-3">4.4.</span> Check list</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-org10a5fb3" class="outline-3">
+<h3 id="org10a5fb3"><span class="section-number-3">5.4.</span> Check list</h3>
+<div class="outline-text-3" id="text-5-4">
 <ul class="org-ul">
 <li class="trans"><code>[-]</code> Doing
 <ul class="org-ul">
@@ -281,11 +377,11 @@ ridiculus mus donec rhoncus.</dd>
 </div>
 </div>
 </section>
-<section id="outline-container-org069b38f" class="outline-2">
-<h2 id="org069b38f"><span class="section-number-2">5.</span> Table</h2>
-<div class="outline-text-2" id="text-5">
+<section id="outline-container-org50558b9" class="outline-2">
+<h2 id="org50558b9"><span class="section-number-2">6.</span> Table</h2>
+<div class="outline-text-2" id="text-6">
 <table>
-<caption class="t-above"><span class="table-number">Table 1:</span> Table Caption</caption>
+<caption class="t-above"><span class="table-number">Table 1:</span> Short table</caption>
 
 <colgroup>
 <col  class="org-right">
@@ -302,12 +398,12 @@ ridiculus mus donec rhoncus.</dd>
 </colgroup>
 <thead>
 <tr>
-<th scope="col" class="org-right">\(N\)</th>
-<th scope="col" class="org-right">\(N^2\)</th>
-<th scope="col" class="org-right">\(N^3\)</th>
-<th scope="col" class="org-right">\(N^4\)</th>
-<th scope="col" class="org-right">\(\sqrt n\)</th>
-<th scope="col" class="org-right">\(\sqrt[4]N\)</th>
+<th scope="col" class="org-right">(N)</th>
+<th scope="col" class="org-right">(N^2)</th>
+<th scope="col" class="org-right">(N^3)</th>
+<th scope="col" class="org-right">(N^4)</th>
+<th scope="col" class="org-right">(sqrt n)</th>
+<th scope="col" class="org-right">(sqrt[4]N)</th>
 </tr>
 </thead>
 <tbody>
@@ -325,8 +421,8 @@ ridiculus mus donec rhoncus.</dd>
 <td class="org-right">4</td>
 <td class="org-right">8</td>
 <td class="org-right">16</td>
-<td class="org-right">1.4142</td>
-<td class="org-right">1.1892</td>
+<td class="org-right">1.4142136</td>
+<td class="org-right">1.1892071</td>
 </tr>
 </tbody>
 <tbody>
@@ -335,18 +431,92 @@ ridiculus mus donec rhoncus.</dd>
 <td class="org-right">9</td>
 <td class="org-right">27</td>
 <td class="org-right">81</td>
-<td class="org-right">1.7321</td>
-<td class="org-right">1.3161</td>
+<td class="org-right">1.7320508</td>
+<td class="org-right">1.3160740</td>
+</tr>
+</tbody>
+</table>
+
+<table style="width:max-content;">
+<caption class="t-above"><span class="table-number">Table 2:</span> Long Table</caption>
+
+<colgroup>
+<col  class="org-right">
+
+<col  class="org-right">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-right">Rank</th>
+<th scope="col" class="org-right">Time</th>
+<th scope="col" class="org-left">Team</th>
+<th scope="col" class="org-left">Nation</th>
+<th scope="col" class="org-left">Date</th>
+<th scope="col" class="org-left">Place</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-right">1</td>
+<td class="org-right">2:54.29</td>
+<td class="org-left">Andrew Valmon, Quincy Watts, Butch Reynolds, Michael Johnson</td>
+<td class="org-left">United States</td>
+<td class="org-left">22 August 1993</td>
+<td class="org-left">Stuttgart</td>
+</tr>
+
+<tr>
+<td class="org-right">2</td>
+<td class="org-right">2:54.53</td>
+<td class="org-left">Bayapo Ndori, Busang Collen Kebinatshipi, Anthony Pesela, Letsile Tebogo</td>
+<td class="org-left">Botswana</td>
+<td class="org-left">10 August 2024</td>
+<td class="org-left">Saint-Denis</td>
+</tr>
+
+<tr>
+<td class="org-right">3</td>
+<td class="org-right">2:55.83</td>
+<td class="org-left">Alex Haydock-Wilson, Matthew Hudson-Smith, Lewis Davey, Charles Dobson</td>
+<td class="org-left">Great Britain</td>
+<td class="org-left">10 August 2024</td>
+<td class="org-left">Saint-Denis</td>
+</tr>
+
+<tr>
+<td class="org-right">4</td>
+<td class="org-right">2:56.72</td>
+<td class="org-left">Chris Brown, Demetrius Pinder, Michael Mathieu, Ramon Miller</td>
+<td class="org-left">Bahamas</td>
+<td class="org-left">10 August 2012</td>
+<td class="org-left">London</td>
+</tr>
+
+<tr>
+<td class="org-right">5</td>
+<td class="org-right">2:56.75</td>
+<td class="org-left">Michael McDonald, Gregory Haughton, Danny McFarlane, Davian Clarke</td>
+<td class="org-left">Jamaica</td>
+<td class="org-left">10 August 1997</td>
+<td class="org-left">Athens</td>
 </tr>
 </tbody>
 </table>
 </div>
 </section>
-<section id="outline-container-org33845bd" class="outline-2">
-<h2 id="org33845bd"><span class="section-number-2">6.</span> Picture</h2>
-<div class="outline-text-2" id="text-6">
+<section id="outline-container-org7f60348" class="outline-2">
+<h2 id="org7f60348"><span class="section-number-2">7.</span> Picture</h2>
+<div class="outline-text-2" id="text-7">
 
-<figure id="org05ca599">
+<figure id="org2bd5b2d">
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/Org-mode-unicorn.svg" alt="Org-mode-unicorn.svg" class="org-svg">
 
 <figcaption><span class="figure-number">Figure 1: </span>Demo Picture with Caption</figcaption>
@@ -357,20 +527,20 @@ And a really wide picture.
 </p>
 
 
-<figure id="orga8f4d7e">
+<figure id="orgf8ed8ad">
 <img src="https://orgmode.org/worg/images/color-themes/color-theme-wombat.png" alt="color-theme-wombat.png">
 
 <figcaption><span class="figure-number">Figure 2: </span>A really long picture</figcaption>
 </figure>
 </div>
 </section>
-<section id="outline-container-orgc73b652" class="outline-2">
-<h2 id="orgc73b652"><span class="section-number-2">7.</span> Blocks</h2>
-<div class="outline-text-2" id="text-7">
+<section id="outline-container-org6bf0053" class="outline-2">
+<h2 id="org6bf0053"><span class="section-number-2">8.</span> Blocks</h2>
+<div class="outline-text-2" id="text-8">
 </div>
-<div id="outline-container-org7870bad" class="outline-3">
-<h3 id="org7870bad"><span class="section-number-3">7.1.</span> Code</h3>
-<div class="outline-text-3" id="text-7-1">
+<div id="outline-container-orgc3e2784" class="outline-3">
+<h3 id="orgc3e2784"><span class="section-number-3">8.1.</span> Code</h3>
+<div class="outline-text-3" id="text-8-1">
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #fce94f;">h1</span> {<span style="color: #b4fa70;">font-size</span>: 3.052em;}
 <span style="color: #fce94f;">h2</span> {<span style="color: #b4fa70;">font-size</span>: 2.441em;}
@@ -378,7 +548,8 @@ And a really wide picture.
 <span style="color: #fce94f;">h4</span> {<span style="color: #b4fa70;">font-size</span>: 1.563em;}
 <span style="color: #fce94f;">h5</span> {<span style="color: #b4fa70;">font-size</span>: 1.25em;}
 
-<span style="color: #fce94f;">body &gt; *</span> {
+<span style="color: #fce94f;">body &gt;
+*</span> {
   <span style="color: #b4fa70;">max-width</span>: 60rem;
   <span style="color: #b4fa70;">margin-left</span>: 1rem;
   <span style="color: #b4fa70;">margin-right</span>: 1rem;
@@ -387,10 +558,10 @@ And a really wide picture.
 </div>
 </div>
 </div>
-<div id="outline-container-orga581115" class="outline-3">
-<h3 id="orga581115"><span class="section-number-3">7.2.</span> Example</h3>
-<div class="outline-text-3" id="text-7-2">
-<pre class="example" id="org5076ffa">
+<div id="outline-container-orgf98a9df" class="outline-3">
+<h3 id="orgf98a9df"><span class="section-number-3">8.2.</span> Example</h3>
+<div class="outline-text-3" id="text-8-2">
+<pre class="example" id="org316859b">
 &lt;blockquote&gt;
  &lt;p&gt;...&lt;/p&gt;
  &lt;cite&gt;...&lt;/cite&gt;
@@ -398,9 +569,9 @@ And a really wide picture.
 </pre>
 </div>
 </div>
-<div id="outline-container-org529e35e" class="outline-3">
-<h3 id="org529e35e"><span class="section-number-3">7.3.</span> Quote</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-org801fc27" class="outline-3">
+<h3 id="org801fc27"><span class="section-number-3">8.3.</span> Quote</h3>
+<div class="outline-text-3" id="text-8-3">
 <blockquote>
 <p>
 Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est voluptatem.
@@ -413,10 +584,10 @@ dolorum illum doloribus placeat molestiae<sup><a id="fnr.lorem_ipsum" class="foo
 </blockquote>
 </div>
 </div>
-<div id="outline-container-org6977a00" class="outline-3">
-<h3 id="org6977a00"><span class="section-number-3">7.4.</span> Aside</h3>
-<div class="outline-text-3" id="text-7-4">
-<aside id="org4a2566c">
+<div id="outline-container-orgb3f0752" class="outline-3">
+<h3 id="orgb3f0752"><span class="section-number-3">8.4.</span> Aside</h3>
+<div class="outline-text-3" id="text-8-4">
+<aside id="org0a16cd1">
 <p>
 <b>Aside</b>: <i>Sed aliquam odio sed faucibus aliquam, arcu augue elementum
 justo, ut vulputate ligula sem in augue.</i>
@@ -442,17 +613,164 @@ posuere nec enim in, eleifend consequat lacus.
 <div style="clear:both"></div>
 </div>
 </div>
-<div id="outline-container-org5acda6d" class="outline-3">
-<h3 id="org5acda6d"><span class="section-number-3">7.5.</span> Flex container</h3>
-<div class="outline-text-3" id="text-7-5">
-<div style="display:flex; flex-wrap: wrap; gap:1rlh; font-size:3rem;" class="flex" id="orgc5e94d1">
-<span style="flex:1; background-color:red; padding: 1rlh">Red</span>
-<span style="flex:1; background-color:yellow; padding: 1rlh">Yellow</span>
-<span style="flex:1; background-color:green; padding: 1rlh">Green</span>
-<span style="flex:1; background-color:cyan; padding: 1rlh">Cyan</span>
-<span style="flex:1; background-color:blue; padding: 1rlh">Blue</span>
-<span style="flex:1; background-color:magenta; padding: 1rlh">Magenta</span>
+<div id="outline-container-orgb48ecad" class="outline-3">
+<h3 id="orgb48ecad"><span class="section-number-3">8.5.</span> Details</h3>
+<div class="outline-text-3" id="text-8-5">
+<details id="org180377d">
+<summary>Summary</summary>
+<p>
+Perferendis unde amet molestiae voluptas. Tenetur rerum sequi et est voluptatem.
+Quis tempore recusandae reprehenderit distinctio sequi. Deleniti earum aut
+corporis. Ut accusamus omnis et deleniti est cumque aliquid. Quas aut est
+dolorum illum doloribus placeat molestiae repudiandae.
+</p>
+</details>
+</div>
+</div>
+<div id="outline-container-org8c3f22f" class="outline-3">
+<h3 id="org8c3f22f"><span class="section-number-3">8.6.</span> Alerts</h3>
+<div class="outline-text-3" id="text-8-6">
+<p>
+Follow the same convention as <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts">GitHub flavored MD</a>.
+</p>
 
+<div class="important" id="org66466e2">
+<p>
+Key information users need to know to achieve their goal.
+</p>
+
+</div>
+
+<div class="note" id="org5754d48">
+<p>
+Useful information that users should know, even when skimming content.
+</p>
+
+</div>
+
+<div class="tip" id="org7b88d7a">
+<p>
+Helpful advice for doing things better or more easily.
+</p>
+
+</div>
+
+<div class="warning" id="org6a54e0d">
+<p>
+Urgent info that needs immediate user attention to avoid problems.
+</p>
+
+</div>
+
+<div class="caution" id="org36d2e7b">
+<p>
+Advises about risks or negative outcomes of certain actions.
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org35a4ce4" class="outline-3">
+<h3 id="org35a4ce4"><span class="section-number-3">8.7.</span> Flex container</h3>
+<div class="outline-text-3" id="text-8-7">
+<p>
+CSS utility classes for <code>flex</code> following <a href="https://v3.tailwindcss.com/docs/flex">Tailwind</a>&rsquo;s conventions.
+</p>
+</div>
+<div id="outline-container-org4ce5b7b" class="outline-4">
+<h4 id="org4ce5b7b"><span class="section-number-4">8.7.1.</span> Examples</h4>
+<div class="outline-text-4" id="text-8-7-1">
+<p>
+<code>#+ATTR_HTML: :class flex</code>
+</p>
+<div class="flex flex" id="org43a7c46">
+<span style="background-color:red; padding: 1rlh">Red</span>
+<span style="background-color:yellow; padding: 1rlh">Yellow</span>
+<span style="background-color:green; padding: 1rlh">Green</span>
+<span style="background-color:cyan; padding: 1rlh">Cyan</span>
+<span style="background-color:blue; padding: 1rlh">Blue</span>
+<span style="background-color:magenta; padding: 1rlh">Magenta</span>
+
+</div>
+
+<p>
+<code>#+ATTR_HTML: :class flex wrap one gap</code>
+</p>
+<div class="flex wrap one gap flex" id="orga178e80">
+<span style="background-color:red; padding: 1rlh">Red</span>
+<span style="background-color:yellow; padding: 1rlh">Yellow</span>
+<span style="background-color:green; padding: 1rlh">Green</span>
+<span style="background-color:cyan; padding: 1rlh">Cyan</span>
+<span style="background-color:blue; padding: 1rlh">Blue</span>
+<span style="background-color:magenta; padding: 1rlh">Magenta</span>
+<span style="background-color:blue; padding: 1rlh">Blue</span>
+<span style="background-color:cyan; padding: 1rlh">Cyan</span>
+<span style="background-color:green; padding: 1rlh">Green</span>
+<span style="background-color:yellow; padding: 1rlh">Yellow</span>
+<span style="background-color:red; padding: 1rlh">Red</span>
+
+</div>
+
+<p>
+<code>#+ATTR_HTML: :class flex col items-center</code>
+</p>
+<div class="flex col items-center flex" id="org4293ca6">
+<span style="background-color:red; padding: 1rlh">Red</span>
+<span style="background-color:green; padding: 1rlh">Green</span>
+<span style="background-color:blue; padding: 1rlh">Blue</span>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgb5626a0" class="outline-4">
+<h4 id="orgb5626a0"><span class="section-number-4">8.7.2.</span> Classes</h4>
+<div class="outline-text-4" id="text-8-7-2">
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #fce94f;">.flex</span> { <span style="color: #b4fa70;">display</span>: flex; }
+
+<span style="color: #fce94f;">.flex.row</span>          { <span style="color: #b4fa70;">flex-direction</span>: row; }
+<span style="color: #fce94f;">.flex.row-reverse</span>  { <span style="color: #b4fa70;">flex-direction</span>: row-reverse; }
+
+<span style="color: #fce94f;">.flex.col</span>          { <span style="color: #b4fa70;">flex-direction</span>: column; }
+<span style="color: #fce94f;">.flex.col-reverse</span>  { <span style="color: #b4fa70;">flex-direction</span>: column-reverse; }
+
+<span style="color: #fce94f;">.flex.wrap</span>         { <span style="color: #b4fa70;">flex-wrap</span>: wrap; }
+<span style="color: #fce94f;">.flex.wrap-reverse</span> { <span style="color: #b4fa70;">flex-wrap</span>: wrap-reverse; }
+
+<span style="color: #fce94f;">.flex.one &gt; *</span>      { <span style="color: #b4fa70;">flex</span>: 1 1 0%; }
+<span style="color: #fce94f;">.flex.auto &gt; *</span>     { <span style="color: #b4fa70;">flex</span>: 1 1 auto; }
+<span style="color: #fce94f;">.flex.initial &gt; *</span>  { <span style="color: #b4fa70;">flex</span>: 0 1 auto; }
+
+<span style="color: #fce94f;">.gap</span>   { <span style="color: #b4fa70;">gap</span>: 1rlh; }
+<span style="color: #fce94f;">.gap-x</span> { <span style="color: #b4fa70;">column-gap</span>: 1rlh; }
+<span style="color: #fce94f;">.gap-y</span> { <span style="color: #b4fa70;">row-gap</span>: 1rlh; }
+
+<span style="color: #fce94f;">.justify-normal</span>  { <span style="color: #b4fa70;">justify-content</span>: normal; }
+<span style="color: #fce94f;">.justify-start</span>   { <span style="color: #b4fa70;">justify-content</span>: start; }
+<span style="color: #fce94f;">.justify-end</span>     { <span style="color: #b4fa70;">justify-content</span>: end; }
+<span style="color: #fce94f;">.justify-center</span>  { <span style="color: #b4fa70;">justify-content</span>: center; }
+<span style="color: #fce94f;">.justify-between</span> { <span style="color: #b4fa70;">justify-content</span>: space-between; }
+<span style="color: #fce94f;">.justify-around</span>  { <span style="color: #b4fa70;">justify-content</span>: space-around; }
+<span style="color: #fce94f;">.justify-evenly</span>  { <span style="color: #b4fa70;">justify-content</span>: space-evenly; }
+<span style="color: #fce94f;">.justify-stretch</span> { <span style="color: #b4fa70;">justify-content</span>: stretch; }
+
+<span style="color: #fce94f;">.content-normal</span>   { <span style="color: #b4fa70;">align-content</span>: normal; }
+<span style="color: #fce94f;">.content-center</span>   { <span style="color: #b4fa70;">align-content</span>: center; }
+<span style="color: #fce94f;">.content-start</span>    { <span style="color: #b4fa70;">align-content</span>: start; }
+<span style="color: #fce94f;">.content-end</span>      { <span style="color: #b4fa70;">align-content</span>: end; }
+<span style="color: #fce94f;">.content-between</span>  { <span style="color: #b4fa70;">align-content</span>: space-between; }
+<span style="color: #fce94f;">.content-around</span>   { <span style="color: #b4fa70;">align-content</span>: space-around; }
+<span style="color: #fce94f;">.content-evenly</span>   { <span style="color: #b4fa70;">align-content</span>: space-evenly; }
+<span style="color: #fce94f;">.content-baseline</span> { <span style="color: #b4fa70;">align-content</span>: baseline; }
+<span style="color: #fce94f;">.content-stretch</span>  { <span style="color: #b4fa70;">align-content</span>: stretch; }
+
+<span style="color: #fce94f;">.items-start</span>    { <span style="color: #b4fa70;">align-items</span>: start; }
+<span style="color: #fce94f;">.items-end</span>      { <span style="color: #b4fa70;">align-items</span>: end; }
+<span style="color: #fce94f;">.items-center</span>   { <span style="color: #b4fa70;">align-items</span>: center; }
+<span style="color: #fce94f;">.items-baseline</span> { <span style="color: #b4fa70;">align-items</span>: baseline; }
+<span style="color: #fce94f;">.items-stretch</span>  { <span style="color: #b4fa70;">align-items</span>: stretch; }
+</pre>
+</div>
 </div>
 </div>
 </div>
@@ -479,10 +797,12 @@ distracting.
 </div>
 </div></div>
 <div id="postamble" class="status">
-<p class="author">Author: DEADB17 (<a href="mailto:deadb17@gmail.com">deadb17@gmail.com</a>)</p>
 <p class="date">Date: 2025-07-11 Fri 00:00</p>
-<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.7.31)</p>
-<p class="validation"></p>
+<p class="author">Author: DEADB17</p>
+<p class="email">Email: <a href="mailto:deadb17@gmail.com">deadb17@gmail.com</a></p>
+<p class="date">Created: 2025-07-30 Wed 10:23</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 30.1 (<a href="https://orgmode.org">Org</a> mode 9.7.33)</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
