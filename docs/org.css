@@ -264,37 +264,35 @@ div {
 /* main grid */
 
 body {
-  display: grid;
-  grid:
-    "header    header    header   "
-    ".         toc       .        "
-    ".         content   .        "
-    ".         footnotes .        "
-    "postamble postamble postamble" /
-    1fr minmax(0, 72ch) 1fr;
+  position: relative;
 
-  @media (width >= calc(36ch + 72ch)) {
-    grid:
-      "header    header    " auto
-      "toc       content   " min-content
-      "footnotes content   " 1fr
-      "postamble postamble " auto /
-      minmax(36ch, 2fr) minmax(36ch, 3fr);
+  @media (width >= calc(26rem + 52rem)) {
+    & > header, #content, #postamble {
+      inline-size: 52rem;
+      margin-inline-start: 26rem;
+    }
+    #table-of-contents, #footnotes {
+      position: fixed;
+      block-size: 50dvh;
+      inline-size: 26rem;
+      overflow-y: auto;
+    }
+    #table-of-contents { top: 0 ; }
+    #footnotes { bottom: 0; }
   }
 
-  @media (width >= calc(36ch + 72ch + 36ch)) {
-    grid:
-      "header    header    header   "
-      "toc       content   footnotes"
-      "postamble postamble postamble" /
-      minmax(36ch, 2fr) minmax(36ch, 3fr) minmax(36ch, 2fr);
+  @media (width >= calc(26rem + 52rem + 26rem)) {
+    & > header, #content, #postamble {
+      margin-inline: auto;
+    }
+    #table-of-contents, #footnotes {
+      block-size: 100dvh;
+      inset-block: 0;
+    }
+    #table-of-contents { inset-inline-start: 0; }
+    #footnotes { inset-inline-end: 0; }
   }
 }
-body > header { grid-area: header; }
-#table-of-contents { grid-area: toc;}
-#content { grid-area: content; }
-#footnotes { grid-area: footnotes;}
-#postamble { grid-area: postamble; }
 
 
 /******************************************************************************/
