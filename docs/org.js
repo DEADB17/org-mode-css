@@ -40,25 +40,6 @@ function structureDocument() {
     else body.classList.add("fn");
   }
 
-  // proportionally size toc and footnotes when they are in one column
-  if (toc && footnotes) {
-    const tocH = toc.clientHeight;
-    const footH = footnotes.clientHeight;
-    if (tocH < footH) {
-      const pc = Math.round((tocH / footH) * 100);
-      toc.style.setProperty("--block-size", `${pc}dvh`);
-      footnotes.style.setProperty("--block-size", `calc(${100 - pc}dvh - 1rlh)`);
-    } else {
-      const pc = Math.round((footH / tocH) * 100);
-      toc.style.setProperty("--block-size", `calc(${100 - pc}dvh - 1rlh)`);
-      footnotes.style.setProperty("--block-size", `${pc}dvh`);
-    }
-    console.log(toc.style.blockSize);
-    console.log(footnotes.style.blockSize);
-  }
-  else if (toc) toc.style.setProperty("--block-size", "100dvh");
-  else if (footnotes) footnotes.style.setProperty("--block-size", "100dvh");
-
   // Content :: Un-nest outline sections
   const content = document.getElementById("content");
   const classes1 = Array.from({length: 5}, (_, i) => `.outline-${i+1}`).join(",");

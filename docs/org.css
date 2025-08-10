@@ -275,7 +275,7 @@ body {
     #table-of-contents, #footnotes {
       position: fixed;
       inline-size: 26rem;
-      block-size: var(--block-size);
+      block-size: 50dvh;
       overflow-y: auto;
     }
     #table-of-contents { top: 0; }
