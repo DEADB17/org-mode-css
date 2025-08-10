@@ -263,6 +263,7 @@ div {
 /******************************************************************************/
 /* main grid */
 
+@media screen {
 body {
   display: grid;
   grid-template-columns: 0 0 minmax(0, 54rem) 0 0;
@@ -306,6 +307,7 @@ body.toc.fn {
     #table-of-contents, #footnotes { block-size: 100dvh; }
     #footnotes { right: 0; }
   }
+}
 }
 
 
