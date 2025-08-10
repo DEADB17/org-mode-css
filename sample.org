@@ -299,8 +299,8 @@ Advises about risks or negative outcomes of certain actions.
 CSS utility classes for ~flex~ following [[https://v3.tailwindcss.com/docs/flex][Tailwind]]'s conventions.
 
 *** Examples
-~#+ATTR_HTML: :class flex~
-#+ATTR_HTML: :class flex
+~#+ATTR_HTML: :class flex wrap~
+#+ATTR_HTML: :class flex wrap
 #+BEGIN_flex
 #+HTML: <span style="background-color:red; padding: 1rlh">Red</span>
 #+HTML: <span style="background-color:yellow; padding: 1rlh">Yellow</span>
