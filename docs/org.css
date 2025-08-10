@@ -437,6 +437,7 @@ body > header {
   margin-block-start: 2rlh;
   padding: 1rlh;
   display: flex;
+  flex-wrap: wrap;
   gap: 1rlh;
   justify-content: space-between;
   background-color: var(--bg-accent);
