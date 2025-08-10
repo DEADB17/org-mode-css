@@ -7,7 +7,7 @@ function structureDocument() {
   const body = document.body;
 
   // Move #content > TOC into body
-  const toc = document.getElementById("table-of-contents");
+  let toc = document.getElementById("table-of-contents");
   if (toc) body.prepend(toc);
 
   // Move #content > header into body
@@ -15,13 +15,49 @@ function structureDocument() {
   if (header) body.prepend(header);
 
   // Move #content > #footnotes into body
-  const foot = document.getElementById("footnotes");
-  if (foot) {
+  let footnotes = document.getElementById("footnotes");
+  if (footnotes) {
     // before #postamble, if exists
     const post = document.getElementById("postamble");
-    if (post) body.insertBefore(foot, post);
-    else body.append(foot);
+    if (post) body.insertBefore(footnotes, post);
+    else body.append(footnotes);
   }
+
+  // Add .toc class to the body if the element is not empty
+  if (toc) {
+    if (toc.firstChild == null) {
+      toc.remove();
+      toc = undefined;
+    }
+    else body.classList.add("toc");
+  }
+  // Add .footnotes class to the body if the element is not empty
+  if (footnotes) {
+    if (footnotes.firstChild == null) {
+      footnotes.remove();
+      footnotes = undefined;
+    }
+    else body.classList.add("fn");
+  }
+
+  // proportionally size toc and footnotes when they are in one column
+  if (toc && footnotes) {
+    const tocH = toc.clientHeight;
+    const footH = footnotes.clientHeight;
+    if (tocH < footH) {
+      const pc = Math.round((tocH / footH) * 100);
+      toc.style.setProperty("--block-size", `${pc}dvh`);
+      footnotes.style.setProperty("--block-size", `calc(${100 - pc}dvh - 1rlh)`);
+    } else {
+      const pc = Math.round((footH / tocH) * 100);
+      toc.style.setProperty("--block-size", `calc(${100 - pc}dvh - 1rlh)`);
+      footnotes.style.setProperty("--block-size", `${pc}dvh`);
+    }
+    console.log(toc.style.blockSize);
+    console.log(footnotes.style.blockSize);
+  }
+  else if (toc) toc.style.setProperty("--block-size", "100dvh");
+  else if (footnotes) footnotes.style.setProperty("--block-size", "100dvh");
 
   // Content :: Un-nest outline sections
   const content = document.getElementById("content");
